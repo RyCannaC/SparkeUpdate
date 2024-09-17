@@ -158,7 +158,8 @@ const ContactCard = () => {
                     </Grid>
                     <Grid item='true' size={12}>
                         <Button
-                            disabled={!values.fName || !values.lName || !values.phone || !values.reqEmail || !values.subject || !values.message || isLoading}
+                            disabled
+                            //disabled={!values.fName || !values.lName || !values.phone || !values.reqEmail || !values.subject || !values.message || isLoading}
                             id="submitButton"
                             type="submit"
                             variant="contained"
