@@ -6,6 +6,7 @@ import Grid from '@mui/material/Grid2'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import useIsMobile from "@/components/IsMobile";
 import Image from "next/image";
+import { useState } from 'react';
 
 const imageStyle = {
   borderRadius: '50%',
@@ -30,7 +31,7 @@ const theme = createTheme({
   });
 
 const AboutUs = () => {
-  const contactPage = false;
+  const [displayButton, setDisplayButton] = useState(false); // Initialize as boolean
   const isMobile = useIsMobile();
   
   return (
@@ -134,7 +135,7 @@ const AboutUs = () => {
       
 </ThemeProvider>
       
-      <ContactUSFooter contactpage={{contactPage}}/>
+<ContactUSFooter contactPage={displayButton} />
     </>
     
   );

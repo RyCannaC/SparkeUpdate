@@ -6,3 +6,5 @@ amplify_outputs*
 amplifyconfiguration*
 
 .vscode
+
+node_modules

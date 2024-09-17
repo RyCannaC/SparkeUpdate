@@ -1,12 +1,9 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
   "/calendar/page": "app/calendar/page.js",
-<<<<<<< HEAD
   "/aboutus/page": "app/aboutus/page.js",
-  "/contactus/page": "app/contactus/page.js",
   "/icon.ico/route": "app/icon.ico/route.js",
+  "/page": "app/page.js",
   "/services/page": "app/services/page.js",
-=======
->>>>>>> 1135f1c (next build)
-  "/page": "app/page.js"
+  "/contactus/page": "app/contactus/page.js"
 }

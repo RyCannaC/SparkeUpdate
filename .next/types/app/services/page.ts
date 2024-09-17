@@ -1,4 +1,4 @@
-// File: /Users/ryanmaxwell/Desktop/WebDev_Sparke/webdev/app/services/page.jsx
+// File: /Users/ryanmaxwell/Desktop/WebDev_Sparke/sparke/webDev/app/services/page.jsx
 import * as entry from '../../../../app/services/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

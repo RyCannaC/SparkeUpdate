@@ -1,9 +1,10 @@
 'use client';
 import ContactCard from '@/components/ContactCard';
 import ContactUSFooter from '@/components/ContactUSFooter';
+import { useState } from 'react';
 
 const ContactUs = () => {
-  const contactPage = true;
+  const [displayButton, setDisplayButton] = useState(true); // Initialize as boolean
   return (
     <>
     
@@ -13,7 +14,7 @@ const ContactUs = () => {
           Contact Us
          </p>
         </h1>
-        <ContactUSFooter contactpage = {contactPage} />
+        <ContactUSFooter contactPage={displayButton} />
         <ContactCard/> 
       </section>
            

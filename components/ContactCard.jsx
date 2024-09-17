@@ -7,8 +7,8 @@ import { useState } from "react";
 import Switch from '@mui/material/Switch';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import { SendEmailCommand } from "@aws-sdk/client-ses";
-import { sesClient } from '@/app/contactus/sesClient';
+/* import { SendEmailCommand } from "@aws-sdk/client-ses";
+import { sesClient } from '@/app/contactus/sesClient'; */
 import { Typography } from "@mui/material";
 import useIsMobile from "./IsMobile";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -34,11 +34,6 @@ const theme = createTheme({
 const initValues = { fName: "", lName: "", phone: "", reqEmail: "", subject: "", message: "", checked: false };
 const initState = { values: initValues, isLoading: false };
 
-function createSendEmailCommand(data) {
-    
-
-    return command;
-};
 
 const ContactCard = () => {
     const [state, setState] = useState(initState);
@@ -83,7 +78,7 @@ const ContactCard = () => {
     </div>
 `;
 
-    const command = new SendEmailCommand({
+    /* const command = new SendEmailCommand({
         Destination: {
             CcAddresses: values.checked ? [values.reqEmail] : [],
             ToAddresses: ["rmaxwell@sparkeunlimited.ca"],
@@ -105,8 +100,8 @@ const ContactCard = () => {
             console.error("Error sending email:", error);
         } finally {
             setState((prev) => ({ ...prev, isLoading: false }));
-        }
-    };
+        }*/
+    }; 
 
     return (
         <Box sx={{ bgcolor: 'white', p: 4, width: 1 }}>

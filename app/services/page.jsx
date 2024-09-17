@@ -5,6 +5,7 @@ import ContactUSFooter from '@/components/ContactUSFooter';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import { useState } from 'react';
 
 
   const theme = createTheme({
@@ -31,7 +32,7 @@ import Typography from '@mui/material/Typography';
   });
 
 const Services = () => {
-  const contactPage = false;
+  const [displayButton, setDisplayButton] = useState(false); // Initialize as boolean
   const isMobile = useIsMobile();
   return (
     <>
@@ -55,7 +56,7 @@ const Services = () => {
     
     
 
-    <ContactUSFooter contactpage={{contactPage}}/>
+    <ContactUSFooter contactPage={displayButton} />
     
     </>
     

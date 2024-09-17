@@ -93,9 +93,9 @@ export default function Nav() {
                 </MenuItem>
                 {/* Put Contact us after appointment once fully developed */}
                 <MenuItem className="orange_gradient">
-                {/* <ListItemIcon>
+                <ListItemIcon>
                     <AlternateEmailIcon/>
-                  </ListItemIcon> */}
+                  </ListItemIcon>
                   <Link href="/contactus" onClick={toggleMenu}>
                     Contact Us
                   </Link>
@@ -136,7 +136,7 @@ export default function Nav() {
             About Us
           </Link>
           {/* Put Contact us after appointment once fully developed */}
-          <AlternateEmailIcon/>
+          
           <Link href="/contactus" className="orange_grad_btn" onClick={toggleMenu}>
                     Contact Us
                   </Link>
