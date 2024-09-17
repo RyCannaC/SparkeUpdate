@@ -12,6 +12,8 @@ import { sesClient } from '@/app/contactus/sesClient'; */
 import { Typography } from "@mui/material";
 import useIsMobile from "./IsMobile";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { SendEmailCommand } from "@aws-sdk/client-ses";
+import sesClient from '@/app/libs/sesClient';
 
 const theme = createTheme({
     palette: {
@@ -48,13 +50,45 @@ const ContactCard = () => {
         }));
     };
 
-    const handleSwitchChange = (event) => {
-        const { checked } = event.target;
-        setState((prev) => ({
-            ...prev,
-            values: { ...prev.values, checked },
-        }));
-    };
+   
+
+    const createSendEmailCommand = () => {
+        return new SendEmailCommand({
+          Destination: {
+            /* required */
+            CcAddresses: [
+                "rmaxwell@sparkeunlimited.ca",
+            ]
+            ,
+            ToAddresses: [
+              "info@sparkeunlimited.ca",
+              /* more To-email addresses */
+            ],
+          },
+          Message: {
+            /* required */
+            Body: {
+              /* required */
+              Html: {
+                Charset: "UTF-8",
+                Data: htmlEmailBody,
+              },
+              Text: {
+                Charset: "UTF-8",
+                Data: values.message,
+              },
+            },
+            Subject: {
+              Charset: "UTF-8",
+              Data: values.subject,
+            },
+          },
+          Source: "info@sparkeunlimited.ca",
+          ReplyToAddresses: [
+            /* more items */
+          ],
+        });
+      };
 
     const onSubmit = async (event) => {
         event.preventDefault();
@@ -78,29 +112,22 @@ const ContactCard = () => {
     </div>
 `;
 
-    /* const command = new SendEmailCommand({
-        Destination: {
-            CcAddresses: values.checked ? [values.reqEmail] : [],
-            ToAddresses: ["rmaxwell@sparkeunlimited.ca"],
-        },
-        Message: {
-            Body: {
-                Html: { Charset: "UTF-8", Data: htmlEmailBody },
-                Text: { Charset: "UTF-8", Data: values.message },
-            },
-            Subject: { Charset: "UTF-8", Data: values.subject },
-        },
-        Source: "info@sparkeunlimited.ca",
-        ReplyToAddresses: [values.reqEmail],
-    });
 
-        try {
-            await sesClient.send(command);
-        } catch (error) {
-            console.error("Error sending email:", error);
-        } finally {
-            setState((prev) => ({ ...prev, isLoading: false }));
-        }*/
+
+
+  const sendEmailCommand = createSendEmailCommand();
+
+  try {
+    return await sesClient.send(sendEmailCommand);
+  } catch (caught) {
+    if (caught instanceof Error && caught.name === "MessageRejected") {
+      /** @type { import('@aws-sdk/client-ses').MessageRejected} */
+      const messageRejectedError = caught;
+      return messageRejectedError;
+    }
+    throw caught;
+  }
+
     }; 
 
     return (
@@ -141,7 +168,7 @@ const ContactCard = () => {
                             onChange={handleInputChange}
                         />
                     </Grid>
-                    <Grid item='true' size={12}>
+                    {/* <Grid item='true' size={12}>
                         <FormGroup>
                             <FormControlLabel
                                 control={
@@ -155,7 +182,7 @@ const ContactCard = () => {
                                 label="Would you like to be cc'd on this email?"
                             />
                         </FormGroup>
-                    </Grid>
+                    </Grid> */}
                     <Grid item='true' size={12}>
                         <Button
                             //disabled
