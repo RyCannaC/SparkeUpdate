@@ -52,7 +52,7 @@ const ContactCard = () => {
 
    
 
-    const createSendEmailCommand = () => {
+    const createSendEmailCommand = (htmlEmailBody) => {
         return new SendEmailCommand({
           Destination: {
             /* required */
@@ -115,7 +115,7 @@ const ContactCard = () => {
 
 
 
-  const sendEmailCommand = createSendEmailCommand();
+  const sendEmailCommand = createSendEmailCommand(htmlEmailBody);
 
   try {
     return await sesClient.send(sendEmailCommand);
