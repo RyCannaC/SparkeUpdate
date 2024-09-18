@@ -54,6 +54,11 @@ export default function Testimonials(props)
             "title": "'Great Service and Communication'",
             "name": "-Shawn S.",
             "description": "Ryan is a very knowledgeable electrician, he provides great service, recommendations, and very reasonable rates. His communication is also excellent, unlike many other contractors. I recently hired Ryan to complete some residential electrical work. Scope of work was to install some motion lights, remove the old ones and install a switch. I am very pleased with all of his work, and providing recommendations. If you are looking for a great electrician, contact Ryan. I will certainly use him for any future electrical needs."
+        },
+        {
+            "title": "'Punctual and Professional'",
+            "name": "-Sunny S.",
+            "description": "Ryan has done an exceptional job on different electrical work that was needed on our home. His professionalism and punctuality has made him our go to electrician for numerous light fixture installations on many occasions. I would highly recommend him to others as I have done so to my neighbors."
         }
     ]
 

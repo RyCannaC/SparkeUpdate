@@ -40,7 +40,8 @@ const Footer = () => {
                                 textAlign: 'left',          // Left-align the text
                               }}
                             >
-                        <Typography>ECRA/ESA#: 7017645</Typography>
+                        <Typography>ECRA/ESA#:</Typography>
+                        <Typography>7017645</Typography>
                         <Image
                             src="/assets/img/ECRA-ESA-logo-black.png"
                             alt="ecra_esa_logo"
