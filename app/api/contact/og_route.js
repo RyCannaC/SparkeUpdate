@@ -1,12 +1,13 @@
 import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses';
 import { NextResponse } from 'next/server';
+import { secret } from '@aws-amplify/backend';
 
 // Set credentials from environment variables
 const creds = {
-    accessKeyId: process.env.env_root_id,
-    secretAccessKey: process.env.env_root_key,
-    //sessionToken: process.env.AWS_SESSION_TOKEN, 
-}
+    accessKeyId: secret("secret_id"),
+    secretAccessKey: secret("secret_key"),
+};
+
 // Initialize SES client
 const sesClient = new SESClient({ 
     region: 'us-east-1', 
@@ -39,8 +40,8 @@ export async function POST(req) {
 
         const sendEmailCommand = new SendEmailCommand({
             Destination: {
-                CcAddresses: ["rmaxwell@sparkeunlimited.ca"],
-                ToAddresses: ["info@sparkeunlimited.ca"],
+                CcAddresses: [],
+                ToAddresses: ["rmaxwell@sparkeunlimited.ca"],
             },
             Message: {
                 Body: {
@@ -63,15 +64,8 @@ export async function POST(req) {
         });
 
         const response = await sesClient.send(sendEmailCommand);
-
-        // Check if the response was successful
-        if (response) {
-            return NextResponse.json({ message: 'Email sent successfully!' }, { status: 200 });
-        } else {
-            return NextResponse.json({ message: 'Failed to send email.' }, { status: 500 });
-        }
+        return NextResponse.json({ message: 'Email sent successfully!', response });
     } catch (err) {
-        console.error("Error sending email:", err);
         return NextResponse.json({ message: 'Internal server error', error: err.message }, { status: 500 });
     }
 }
