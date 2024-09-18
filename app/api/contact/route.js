@@ -1,11 +1,11 @@
 import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses';
 import { NextResponse } from 'next/server';
+import { secret } from '@aws-amplify/backend';
 
 // Set credentials from environment variables
 const creds = {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    sessionToken: process.env.AWS_SESSION_TOKEN, // Optional if using temporary credentials
+    accessKeyId: secret("secret_id"),
+    secretAccessKey: secret("secret_key"),
 };
 
 // Initialize SES client
