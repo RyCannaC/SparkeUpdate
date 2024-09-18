@@ -40,8 +40,8 @@ export async function POST(req) {
 
         const sendEmailCommand = new SendEmailCommand({
             Destination: {
-                CcAddresses: ["rmaxwell@sparkeunlimited.ca"],
-                ToAddresses: ["info@sparkeunlimited.ca"],
+                CcAddresses: [],
+                ToAddresses: ["rmaxwell@sparkeunlimited.ca"],
             },
             Message: {
                 Body: {
