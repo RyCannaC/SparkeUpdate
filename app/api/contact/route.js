@@ -1,4 +1,5 @@
-import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses';
+import { SendEmailCommand } from '@aws-sdk/client-sesv2';
+import { SESv2Client } from '@aws-sdk/client-sesv2';
 import { NextResponse } from 'next/server';
 /* import { Amplify } from 'aws-amplify';
 
@@ -11,7 +12,7 @@ const creds = {
     //sessionToken: process.env.AWS_SESSION_TOKEN, 
 }
 // Initialize SES client
-const sesClient = new SESClient({ 
+const sesClient = new SESv2Client({ 
     region: 'us-east-1', 
     credentials: creds 
 });

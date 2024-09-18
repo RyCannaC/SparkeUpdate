@@ -5,6 +5,6 @@
   "/calendar/page": "app/calendar/page.js",
   "/aboutus/page": "app/aboutus/page.js",
   "/icon.ico/route": "app/icon.ico/route.js",
-  "/services/page": "app/services/page.js",
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/services/page": "app/services/page.js"
 }
