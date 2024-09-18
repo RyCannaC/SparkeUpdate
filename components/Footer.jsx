@@ -130,7 +130,7 @@ const Footer = () => {
                             <IconButton href="https://facebook.com" color="inherit">
                             <FacebookIcon />
                             </IconButton>
-                            <IconButton href="https://linkedin.com" color="inherit">
+                            <IconButton href="https://www.linkedin.com/company/spark-e-unlimited-electrical" color="inherit">
                             <LinkedInIcon />
                             </IconButton>
                         </Grid>
