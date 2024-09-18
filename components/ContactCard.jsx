@@ -53,11 +53,14 @@ const ContactCard = () => {
                 },
                 body: JSON.stringify({ values }),
             });
-
-            console.log("Response status:", response.status);
-            const data = await response.json();
-            console.log("Response data:", data);
-
+    
+            let data;
+            if (response.headers.get('content-type')?.includes('application/json')) {
+                data = await response.json();
+            } else {
+                data = { message: 'No valid JSON response from server' };
+            }
+    
             if (response.ok) {
                 alert("Email sent successfully!");
             } else {
@@ -70,6 +73,7 @@ const ContactCard = () => {
             setState((prev) => ({ ...prev, isLoading: false }));
         }
     };
+    
 
     return (
         <Box sx={{ bgcolor: 'white', p: 4, width: 1 }}>
