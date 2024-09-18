@@ -1,6 +1,6 @@
 'use client';
 import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid2";
+import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useState } from "react";
@@ -44,9 +44,9 @@ const ContactCard = () => {
     const onSubmit = async (event) => {
         event.preventDefault();
         setState((prev) => ({ ...prev, isLoading: true }));
-console.log(values);
+
         try {
-            const response = await fetch('/api/contact', {
+            const response = await fetch('/api/sendEmail', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -79,7 +79,7 @@ console.log(values);
             <form onSubmit={onSubmit}>
                 <Grid container spacing={2}>
                     {['fName', 'lName', 'phone', 'reqEmail', 'subject'].map((field, idx) => (
-                        <Grid item='true' size={12} key={idx}>
+                        <Grid item xs={12} key={idx}>
                             <TextField
                                 id={field}
                                 name={field}
@@ -93,7 +93,7 @@ console.log(values);
                             />
                         </Grid>
                     ))}
-                    <Grid item='true' size={12}>
+                    <Grid item xs={12}>
                         <TextField
                             id="message"
                             name="message"
@@ -107,24 +107,8 @@ console.log(values);
                             onChange={handleInputChange}
                         />
                     </Grid>
-                    {/* <Grid item='true' size={12}>
-                        <FormGroup>
-                            <FormControlLabel
-                                control={
-                                    <Switch
-                                        id="ccEmail"
-                                        checked={values.checked}
-                                        onChange={handleSwitchChange}
-                                        color="warning"
-                                    />
-                                }
-                                label="Would you like to be cc'd on this email?"
-                            />
-                        </FormGroup>
-                    </Grid> */}
-                    <Grid item='true' size={12}>
+                    <Grid item xs={12}>
                         <Button
-                            //disabled
                             disabled={!values.fName || !values.lName || !values.phone || !values.reqEmail || !values.subject || !values.message || isLoading}
                             id="submitButton"
                             type="submit"

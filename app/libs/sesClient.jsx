@@ -1,9 +1,17 @@
 import { SESClient } from "@aws-sdk/client-ses";
+import { secret } from '@aws-amplify/backend';
 
-const sesClient = () =>{
 // Set the AWS Region.
 const REGION = "us-east-1";
-// Create SES service object.
-const sesClient = new SESClient({ region: REGION });
+const creds = {
+    accessKeyId: secret('secret_key'),
+    secretAccessKey: secret('secret_id'),
+    sessionToken: secret('session_token'),
 };
-export default sesClient;
+
+// Create SES service object.
+const sesClient = new SESClient({ 
+    region: REGION, 
+    credentials: creds
+});
+export { sesClient };

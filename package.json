@@ -21,7 +21,7 @@
     "@mui/styles": "^6.1.0",
     "@next/env": "^14.2.11",
     "autoprefixer": "^10.4.20",
-    "aws-amplify": "^6.6.0",
+    "aws-amplify": "^6.6.2",
     "aws-sdk": "^2.1691.0",
     "bcrypt": "^5.1.1",
     "date-fns": "^3.6.0",
