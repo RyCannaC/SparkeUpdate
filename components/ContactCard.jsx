@@ -57,7 +57,9 @@ const ContactCard = () => {
             let data;
             if (response.headers.get('content-type')?.includes('application/json')) {
                 data = await response.json();
-            } else {
+            } else if (response.headers.get('content-type')?.includes('basic')) {
+                data = await response.json();
+            }else {
                 data = { message: 'No valid JSON response from server' };
             }
     
