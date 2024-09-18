@@ -43,23 +43,23 @@ export async function POST(req) {
 
         const sendEmailCommand = new SendEmailCommand({
             Destination: {
-                CcAddresses: ["rmaxwell@sparkeunlimited.ca"],
+                CcAddresses: ["info@sparkeunlimited.ca"],
                 ToAddresses: ["info@sparkeunlimited.ca"],
             },
             Message: {
                 Body: {
                     Html: {
                         Charset: "UTF-8",
-                        Data: htmlEmailBody,
+                        Data: "htmlEmailBody",
                     },
                     Text: {
                         Charset: "UTF-8",
-                        Data: values.message,
+                        Data: "values.message",
                     },
                 },
                 Subject: {
                     Charset: "UTF-8",
-                    Data: values.subject,
+                    Data: "values.subject",
                 },
             },
             Source: "info@sparkeunlimited.ca",
