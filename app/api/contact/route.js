@@ -1,8 +1,8 @@
 import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses';
 import { NextResponse } from 'next/server';
-import { Amplify } from 'aws-amplify';
+/* import { Amplify } from 'aws-amplify';
 
-Amplify.configure();
+Amplify.configure(); */
 
 // Set credentials from environment variables
 const creds = {

@@ -53,7 +53,7 @@ const ContactCard = () => {
                 },
                 body: JSON.stringify({ values }),
             });
-    
+            console.log(response);
             let data;
             if (response.headers.get('content-type')?.includes('application/json')) {
                 data = await response.json();
