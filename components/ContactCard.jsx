@@ -44,7 +44,7 @@ const ContactCard = () => {
     const onSubmit = async (event) => {
         event.preventDefault();
         setState((prev) => ({ ...prev, isLoading: true }));
-console.log(values);
+        console.log(values);
         try {
             const response = await fetch('/api/contact', {
                 method: 'POST',
@@ -54,7 +54,9 @@ console.log(values);
                 body: JSON.stringify({ values }),
             });
 
+            console.log("Response status:", response.status);
             const data = await response.json();
+            console.log("Response data:", data);
 
             if (response.ok) {
                 alert("Email sent successfully!");
