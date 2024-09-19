@@ -7,7 +7,7 @@ export async function POST(req) {
 
     const transporter = nodemailer.createTransport({
       host: "email-smtp.us-east-1.amazonaws.com",
-      port: 2587, 
+      port: 587, 
       secure: false, 
       auth: {
         user: 'AKIAU4U3VUHSXLLZSXWO',
