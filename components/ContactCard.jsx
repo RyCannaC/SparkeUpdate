@@ -4,11 +4,6 @@ import Grid from "@mui/material/Grid2";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useState } from "react";
-import Switch from '@mui/material/Switch';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-/* import { SendEmailCommand } from "@aws-sdk/client-ses";
-import { sesClient } from '@/app/contactus/sesClient'; */
 import { Typography } from "@mui/material";
 import useIsMobile from "./IsMobile";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -48,13 +43,7 @@ const ContactCard = () => {
         }));
     };
 
-    const handleSwitchChange = (event) => {
-        const { checked } = event.target;
-        setState((prev) => ({
-            ...prev,
-            values: { ...prev.values},
-        }));
-    };
+    
 
     const onSubmit = async (event) => {
         event.preventDefault();
@@ -121,7 +110,6 @@ const ContactCard = () => {
                     
                     <Grid item='true' size={12}>
                         <Button
-                            //disabled
                             disabled={!values.fName || !values.lName || !values.phone || !values.reqEmail || !values.subject || !values.message || isLoading}
                             id="submitButton"
                             type="submit"
