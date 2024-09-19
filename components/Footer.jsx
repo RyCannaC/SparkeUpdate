@@ -11,6 +11,7 @@ import CardContent  from '@mui/material/CardContent';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Image from 'next/image';
 import useIsMobile from './IsMobile';
+import QrCode2Icon from '@mui/icons-material/QrCode2';
 
 const theme = createTheme({
     newcolors: {
@@ -82,6 +83,10 @@ const Footer = () => {
                             <IconButton href="https://www.linkedin.com/company/spark-e-unlimited-electrical" color="inherit">
                             <LinkedInIcon />
                             </IconButton>
+                            <IconButton href="https://linko.page/spark-e" color="inherit">
+                            <QrCode2Icon />
+                            </IconButton>
+                            
                         </Grid>
                     </Grid>
                     <Box textAlign="center" mt={4}>
@@ -133,6 +138,9 @@ const Footer = () => {
                             </IconButton>
                             <IconButton href="https://www.linkedin.com/company/spark-e-unlimited-electrical" color="inherit">
                             <LinkedInIcon />
+                            </IconButton>
+                            <IconButton href="https://linko.page/spark-e" color="inherit">
+                            <QrCode2Icon />
                             </IconButton>
                         </Grid>
                     </Grid>
