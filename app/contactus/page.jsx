@@ -16,6 +16,7 @@ const ContactUs = () => {
         </h1>
         <ContactUSFooter contactPage={displayButton} />
         {/* <ContactCard/>  */}
+        
       </section>
            
   

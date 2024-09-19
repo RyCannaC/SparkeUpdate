@@ -7,7 +7,7 @@ import Link from "next/link";
 import Typography from '@mui/material/Typography';
 import useIsMobile from './IsMobile';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
+import Iframe from 'react-iframe';
 import { useMemo } from "react";
 
 const ViewportContent = ({contactpage}) =>{
@@ -45,58 +45,30 @@ const ViewportContent = ({contactpage}) =>{
                                 variant={titleVariant}
                                 sx={{ marginBottom: 2, fontWeight: 'bold', color: theme.palette.primary.dark }}
                             >
-                                Location & Contact Information:
+                                Business Hours:
                             </Typography>
                         </Grid>
-                    <Grid item="true" size={12} sx={{ marginBottom: 1, display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
-                        
-                        <BoltIcon fontSize="small" />
-                        <Typography sx={{ fontWeight: 'bold' }} variant={bodyVariant}>
-                            Address:<br/>
-                            </Typography>
-                            </Grid>
-                    <Grid item="true" size={12} sx={{ marginBottom: 1, display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
-                        <Typography variant={bodyVariant}>
-                            367 Balinroan Cres., <br/>
-                            Nepean ON, K2J 3V1
-                        </Typography>
-                        </Grid>
-                        <Grid item="true" size={12} sx={{ marginBottom: 1, display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
-                            <BoltIcon fontSize="small" />
-                        <Typography sx={{ fontWeight: 'bold' }} variant={bodyVariant}>
-                            Phone:<br/>
-                            </Typography>
-                            </Grid>
-                    <Grid item="true" size={12} sx={{ marginBottom: 1, display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
-                        <Typography variant={bodyVariant}>
-                            (343) 596-6337
-                        </Typography>
-                        </Grid>
-                        <Grid item="true" size={12} sx={{ marginBottom: 1, display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
-                            <BoltIcon fontSize="small" />
-                        <Typography sx={{ fontWeight: 'bold' }} variant={bodyVariant}>
-                            Email:<br/>
-                            </Typography>
-                            </Grid>
-                    <Grid item="true" size={12} sx={{ marginBottom: 1, display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
-                        <Typography variant={bodyVariant}>
-                            rmaxwell@sparkeunlimited.ca
-                        </Typography>
-                         </Grid>
-                        <Grid item="true" size={12} sx={{ marginBottom: 1, display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
-                            <BoltIcon fontSize="small" />
-                        <Typography sx={{ fontWeight: 'bold' }} variant={bodyVariant}>
-                            Business Hours:<br/>
-                        </Typography>
-                        </Grid>
+                    
                     <Grid item="true" size={12} sx={{ marginBottom: 1, display: 'flex', justifyContent: 'center', textAlign: 'center' }}>       
                         <Typography variant={bodyVariant}>
                             Mon-Fri: 5:00 PM – 9:00 PM <br/>
                             Sat-Sun: 9:00 AM – 9:00 PM
                         </Typography>
                     </Grid>
+                    <Grid item="true" size={12} sx={{ display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
+                            <Iframe url="https://linko.page/spark-e"
+                                    position="relative"
+                                    width="100%"
+                                    id="myId"
+                                    className="myClassname"
+                                    height="100%"
+                                    styles={{height: "2024px"}}/>
+                        </Grid>
                     </Grid>
+                    
+
                 </ThemeProvider>
+
             )
             
         }
@@ -108,77 +80,28 @@ const ViewportContent = ({contactpage}) =>{
                             variant={titleVariant}
                             sx={{ marginBottom: 2, fontWeight: 'bold', color: theme.palette.primary.dark }}
                         >
-                            Location & Contact Information:
+                            Business Hours:
                         </Typography>
                     </Grid>
                     <Grid item="true" size={12} sx={{ marginBottom: 4, display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
-                        <Grid container spacing={2}>
-                            <Grid item="true" size={6}>
-                                <List dense>
-                                    <ListItem>
-                                        <ListItemIcon>
-                                            <BoltIcon fontSize="small" />
-                                        </ListItemIcon>
-                                        <Typography sx={{ fontWeight: 'bold' }} variant={bodyVariant}>
-                                            Address:
-                                        </Typography>
-                                    </ListItem>
-                                    <ListItem>
-                                        <ListItemIcon>
-                                            <BoltIcon fontSize="small" />
-                                        </ListItemIcon>
-                                        <Typography sx={{ fontWeight: 'bold' }} variant={bodyVariant}>
-                                            Phone:
-                                        </Typography>
-                                    </ListItem>
-                                    <ListItem>
-                                        <ListItemIcon>
-                                            <BoltIcon fontSize="small" />
-                                        </ListItemIcon>
-                                        <Typography sx={{ fontWeight: 'bold' }} variant={bodyVariant}>
-                                            Email:
-                                        </Typography>
-                                    </ListItem>
-                                    <ListItem>
-                                        <ListItemIcon>
-                                            <BoltIcon fontSize="small" />
-                                        </ListItemIcon>
-                                        <Typography sx={{ fontWeight: 'bold' }} variant={bodyVariant}>
-                                            Business Hours:
-                                        </Typography>
-                                    </ListItem>
-                                </List>
-                            </Grid>
-                            <Grid item="true" size={6}>
-                                <List dense>
-                                    <ListItem>
-                                        <Typography variant={bodyVariant}>
-                                            367 Balinroan Cres., Nepean ON, K2J 3V1
-                                        </Typography>
-                                    </ListItem>
-                                    <ListItem>
-                                        <Typography variant={bodyVariant}>
-                                            (343) 596-6337
-                                        </Typography>
-                                    </ListItem>
-                                    <ListItem>
-                                        <Typography variant={bodyVariant}>
-                                            rmaxwell@sparkeunlimited.ca
-                                        </Typography>
-                                    </ListItem>
-                                    <ListItem>
-                                        <Typography variant={bodyVariant}>
-                                            Mon-Fri: 5:00 PM – 9:00 PM
-                                        </Typography>
-                                    </ListItem>
-                                    <ListItem>
-                                        <Typography variant={bodyVariant}>
-                                            Sat-Sun: 9:00 AM – 9:00 PM
-                                        </Typography>
-                                    </ListItem>
-                                </List>
-                            </Grid>
-                        </Grid>
+                        
+                        <Typography variant={bodyVariant}>
+                            Mon-Fri: 5:00 PM – 9:00 PM
+                        </Typography>
+                    
+                        <Typography variant={bodyVariant}>
+                            Sat-Sun: 9:00 AM – 9:00 PM
+                        </Typography>
+                               
+                    </Grid>
+                    <Grid item="true" size={12} sx={{ display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
+                        <Iframe url="https://linko.page/spark-e"
+                                width="100%"
+                                height="2048px"
+                                id="contactusframe"
+                                className=""
+                                display="block"
+                                position="relative"/>
                     </Grid>
                 </Grid>
                          

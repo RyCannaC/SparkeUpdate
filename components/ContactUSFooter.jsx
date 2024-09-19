@@ -1,16 +1,9 @@
-import Link from "next/link";
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import useIsMobile from './IsMobile';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ViewportContent from '@/components/ContactFooterView';
-import { useState, useEffect } from "react";
-import BoltIcon from '@mui/icons-material/Bolt';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import { Grid2 } from "@mui/material";
-import CircleIcon from '@mui/icons-material/Circle';
+
 
 const theme = createTheme({
     palette: {
@@ -60,7 +53,7 @@ const ContactUSFooter = ({contactPage}) => {
                     >
                         
                         <ViewportContent contactpage={contactPage}/>
-                    
+                        
                 </Box>
             </Box>
         </ThemeProvider>
