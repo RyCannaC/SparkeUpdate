@@ -52,7 +52,7 @@ const ContactCard = () => {
         const { checked } = event.target;
         setState((prev) => ({
             ...prev,
-            values: { ...prev.values, checked },
+            values: { ...prev.values},
         }));
     };
 
@@ -71,11 +71,11 @@ const ContactCard = () => {
           body: JSON.stringify(values),
         });
       
-        if (response.ok) {
+        /* if (response.ok) {
           console.log('Email sent successfully');
         } else {
           console.error('Error sending email');
-        }
+        } */
       
         setState((prev) => ({ ...prev, isLoading: false }));
     }; 
@@ -118,21 +118,7 @@ const ContactCard = () => {
                             onChange={handleInputChange}
                         />
                     </Grid>
-                    <Grid item='true' size={12}>
-                        <FormGroup>
-                            <FormControlLabel
-                                control={
-                                    <Switch
-                                        id="ccEmail"
-                                        checked={values.checked}
-                                        onChange={handleSwitchChange}
-                                        color="warning"
-                                    />
-                                }
-                                label="Would you like to be cc'd on this email?"
-                            />
-                        </FormGroup>
-                    </Grid>
+                    
                     <Grid item='true' size={12}>
                         <Button
                             //disabled
