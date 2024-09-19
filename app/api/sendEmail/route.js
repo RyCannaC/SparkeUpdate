@@ -11,7 +11,7 @@ export async function POST(req) {
       secure: false, 
       auth: {
         user: 'AKIAU4U3VUHSXLLZSXWO',
-        pass: process.env.EMAIL_PASS, // Ensure EMAIL_PASS is stored as an env variable
+        pass: 'BH6UY8EBuH5myvBmHj3Ybbgrm/mL+1YWZQP5aEURUnx0'//process.env.EMAIL_PASS,  Ensure EMAIL_PASS is stored as an env variable
       },
     });
 
