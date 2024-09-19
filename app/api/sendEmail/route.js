@@ -26,7 +26,7 @@ export async function POST(req) {
      console.log('Transporter configuration:', transporter.options);
  
     const info = await transporter.sendMail(mailOptions);
-    /* console.log('Email sent successfully:', info.response); */
+    console.log('Email sent successfully:', info.response); 
 
     return new Response(JSON.stringify({ success: true }), { status: 200 });
   } catch (error) {
