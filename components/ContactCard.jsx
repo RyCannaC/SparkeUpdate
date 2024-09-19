@@ -60,47 +60,24 @@ const ContactCard = () => {
         event.preventDefault();
         setState((prev) => ({ ...prev, isLoading: true }));
 
-        const htmlEmailBody = `
-    <div style="font-family: Arial, sans-serif; color: #333;">
-        <h2 style="color: #0056b3;">New Contact Request</h2>
-        <p><strong>First Name:</strong> ${values.fName}</p>
-        <p><strong>Last Name:</strong> ${values.lName}</p>
-        <p><strong>Phone Number:</strong> ${values.phone}</p>
-        <p><strong>Email:</strong> ${values.reqEmail}</p>
-        <p><strong>Subject:</strong> ${values.subject}</p>
-        <h3>Message:</h3>
-        <p style="border-left: 4px solid #ddd; padding-left: 10px; color: #555;">
-            ${values.message}
-        </p>
-        <br />
-        <hr />
-        <p>This message was sent from your website contact form.</p>
-    </div>
-`;
-
-    /* const command = new SendEmailCommand({
-        Destination: {
-            CcAddresses: values.checked ? [values.reqEmail] : [],
-            ToAddresses: ["rmaxwell@sparkeunlimited.ca"],
-        },
-        Message: {
-            Body: {
-                Html: { Charset: "UTF-8", Data: htmlEmailBody },
-                Text: { Charset: "UTF-8", Data: values.message },
-            },
-            Subject: { Charset: "UTF-8", Data: values.subject },
-        },
-        Source: "info@sparkeunlimited.ca",
-        ReplyToAddresses: [values.reqEmail],
-    });
-
-        try {
-            await sesClient.send(command);
-        } catch (error) {
-            console.error("Error sending email:", error);
-        } finally {
-            setState((prev) => ({ ...prev, isLoading: false }));
-        }*/
+        event.preventDefault();
+        setState((prev) => ({ ...prev, isLoading: true }));
+      
+        const response = await fetch('/api/sendEmail', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(values),
+        });
+      
+        if (response.ok) {
+          console.log('Email sent successfully');
+        } else {
+          console.error('Error sending email');
+        }
+      
+        setState((prev) => ({ ...prev, isLoading: false }));
     }; 
 
     return (
@@ -158,8 +135,8 @@ const ContactCard = () => {
                     </Grid>
                     <Grid item='true' size={12}>
                         <Button
-                            disabled
-                            //disabled={!values.fName || !values.lName || !values.phone || !values.reqEmail || !values.subject || !values.message || isLoading}
+                            //disabled
+                            disabled={!values.fName || !values.lName || !values.phone || !values.reqEmail || !values.subject || !values.message || isLoading}
                             id="submitButton"
                             type="submit"
                             variant="contained"
