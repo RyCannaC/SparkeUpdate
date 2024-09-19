@@ -29,13 +29,13 @@ const theme = createTheme({
 
 // Initial form values
 const initValues = { fName: "", lName: "", phone: "", reqEmail: "", subject: "", message: "" };
-const initState = { values: initValues, isLoading: false };
+const initState = { values: initValues, isLoading: false, responseData: "" };
 
 const ContactUs = () => {
   const [displayButton, setDisplayButton] = useState(true); // Initialize as boolean
 
   const [state, setState] = useState(initState);
-    const { values, isLoading } = state;
+    const { values, isLoading, responseData } = state;
     const isMobile = useIsMobile();
 
     const handleInputChange = (event) => {
@@ -62,7 +62,12 @@ const ContactUs = () => {
           },
           body: JSON.stringify(values),
         });    
-        setState((prev) => ({ ...prev, isLoading: false }));
+        setState((prev) => ({ ...prev, isLoading: false, responseData: response }));
+
+        if (responseData){
+          console.log(responseData)
+
+        }
     }; 
 
   return (
