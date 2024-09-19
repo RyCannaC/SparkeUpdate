@@ -11,6 +11,8 @@ import CardContent  from '@mui/material/CardContent';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Image from 'next/image';
 import useIsMobile from './IsMobile';
+import QrCode2Icon from '@mui/icons-material/QrCode2';
+import XIcon from '@mui/icons-material/X';
 
 const theme = createTheme({
     newcolors: {
@@ -40,7 +42,8 @@ const Footer = () => {
                                 textAlign: 'left',          // Left-align the text
                               }}
                             >
-                        <Typography>ECRA/ESA#: 7017645</Typography>
+                        <Typography>ECRA/ESA#:</Typography>
+                        <Typography>7017645</Typography>
                         <Image
                             src="/assets/img/ECRA-ESA-logo-black.png"
                             alt="ecra_esa_logo"
@@ -72,7 +75,7 @@ const Footer = () => {
                                 display: 'flex',
                                 flexDirection: 'column',    // Stack items vertically
                                 alignItems: 'center',       // Center the content horizontally
-                                textAlign: 'left',          // Left-align the text
+                                textAlign: 'center',          // Left-align the text
                               }}>
                             <Typography variant="h6">Follow Us</Typography>
                             <IconButton href="https://facebook.com" color="inherit">
@@ -81,6 +84,13 @@ const Footer = () => {
                             <IconButton href="https://www.linkedin.com/company/spark-e-unlimited-electrical" color="inherit">
                             <LinkedInIcon />
                             </IconButton>
+                            <IconButton href="https://linko.page/spark-e" color="inherit">
+                            <QrCode2Icon />
+                            </IconButton>
+                            <IconButton href="https://x.com/_Spark_E" color="inherit">
+                            <XIcon />
+                            </IconButton>
+                            
                         </Grid>
                     </Grid>
                     <Box textAlign="center" mt={4}>
@@ -125,13 +135,19 @@ const Footer = () => {
                             <Link href="/aboutus" color="inherit">About Us</Link><br />
                             <Link href="/contactus" color="inherit">Contact Us</Link>
                         </Grid>
-                        <Grid item='true' textAlign='right' size={2}>
+                        <Grid item='true' textAlign='center' size={2}>
                             <Typography variant="h6">Follow Us</Typography>
                             <IconButton href="https://facebook.com" color="inherit">
                             <FacebookIcon />
                             </IconButton>
-                            <IconButton href="https://linkedin.com" color="inherit">
+                            <IconButton href="https://www.linkedin.com/company/spark-e-unlimited-electrical" color="inherit">
                             <LinkedInIcon />
+                            </IconButton>
+                            <IconButton href="https://linko.page/spark-e" color="inherit">
+                            <QrCode2Icon />
+                            </IconButton>
+                            <IconButton href="https://x.com/_Spark_E" color="inherit">
+                            <XIcon />
                             </IconButton>
                         </Grid>
                     </Grid>
