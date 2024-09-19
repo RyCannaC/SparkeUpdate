@@ -12,6 +12,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Image from 'next/image';
 import useIsMobile from './IsMobile';
 import QrCode2Icon from '@mui/icons-material/QrCode2';
+import XIcon from '@mui/icons-material/X';
 
 const theme = createTheme({
     newcolors: {
@@ -74,7 +75,7 @@ const Footer = () => {
                                 display: 'flex',
                                 flexDirection: 'column',    // Stack items vertically
                                 alignItems: 'center',       // Center the content horizontally
-                                textAlign: 'left',          // Left-align the text
+                                textAlign: 'center',          // Left-align the text
                               }}>
                             <Typography variant="h6">Follow Us</Typography>
                             <IconButton href="https://facebook.com" color="inherit">
@@ -85,6 +86,9 @@ const Footer = () => {
                             </IconButton>
                             <IconButton href="https://linko.page/spark-e" color="inherit">
                             <QrCode2Icon />
+                            </IconButton>
+                            <IconButton href="https://x.com/_Spark_E" color="inherit">
+                            <XIcon />
                             </IconButton>
                             
                         </Grid>
@@ -131,7 +135,7 @@ const Footer = () => {
                             <Link href="/aboutus" color="inherit">About Us</Link><br />
                             <Link href="/contactus" color="inherit">Contact Us</Link>
                         </Grid>
-                        <Grid item='true' textAlign='right' size={2}>
+                        <Grid item='true' textAlign='center' size={2}>
                             <Typography variant="h6">Follow Us</Typography>
                             <IconButton href="https://facebook.com" color="inherit">
                             <FacebookIcon />
@@ -141,6 +145,9 @@ const Footer = () => {
                             </IconButton>
                             <IconButton href="https://linko.page/spark-e" color="inherit">
                             <QrCode2Icon />
+                            </IconButton>
+                            <IconButton href="https://x.com/_Spark_E" color="inherit">
+                            <XIcon />
                             </IconButton>
                         </Grid>
                     </Grid>
