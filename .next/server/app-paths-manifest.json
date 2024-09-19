@@ -1,3 +1,9 @@
 {
-  "/contactus/page": "app/contactus/page.js"
+  "/_not-found/page": "app/_not-found/page.js",
+  "/contactus/page": "app/contactus/page.js",
+  "/calendar/page": "app/calendar/page.js",
+  "/aboutus/page": "app/aboutus/page.js",
+  "/page": "app/page.js",
+  "/services/page": "app/services/page.js",
+  "/icon.ico/route": "app/icon.ico/route.js"
 }
