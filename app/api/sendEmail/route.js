@@ -1,5 +1,6 @@
 // app/api/sendEmail/route.js
 import nodemailer from 'nodemailer';
+import { NextResponse } from 'next/server';
 
 export async function POST(req) {
   try {
@@ -28,10 +29,10 @@ export async function POST(req) {
     const info = await transporter.sendMail(mailOptions);
     console.log('Email sent successfully:', info.response); 
 
-    return new Response(JSON.stringify({ success: true }), { status: 200 });
+    return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
     // Log the full error for debugging
      console.error('Error sending email:', error);
-     return new Response(JSON.stringify({ success: false, error: error.message }), { status: 500 });
+     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 })
   }
 }
