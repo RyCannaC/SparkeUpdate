@@ -1,8 +1,7 @@
-// app/api/sendEmail/route.js
 import nodemailer from 'nodemailer';
 import { NextResponse } from 'next/server';
 
-export async function POST(req) {
+export async function POST(req, res) {
   try {
     const { fName, lName, reqEmail, subject, message } = await req.json();
 
@@ -12,7 +11,7 @@ export async function POST(req) {
       secure: false, 
       auth: {
         user: 'AKIAU4U3VUHSXLLZSXWO',
-        pass: 'BH6UY8EBuH5myvBmHj3Ybbgrm/mL+1YWZQP5aEURUnx0'
+        pass: 'BH6UY8EBuH5myvBmHj3Ybbgrm/mL+1YWZQP5aEURUnx0',
       },
     });
 
@@ -23,16 +22,12 @@ export async function POST(req) {
       html: `<p>${message}</p><p>From: ${fName} ${lName} (${reqEmail})</p>`,
     };
 
-    // Log transporter configuration for debugging
-     console.log('Transporter configuration:', transporter.options);
- 
     const info = await transporter.sendMail(mailOptions);
-    console.log('Email sent successfully:', info.response); 
+    console.log('Email sent successfully:', info.response, "res answer", res);
 
-    return NextResponse.json({ success: true }, { status: 200 });
+    return NextResponse.json({ success: true, message: 'Email sent successfully' }, { status: 200 });
   } catch (error) {
-    // Log the full error for debugging
-     console.error('Error sending email:', error);
-     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 })
+    console.error('Error sending email:', error);
+    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }
 }

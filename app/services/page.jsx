@@ -36,13 +36,11 @@ const Services = () => {
   const isMobile = useIsMobile();
   return (
     <>
-  <section className='mb-6 w-full flex-center flex-col'>
-    <h1 className='h2_text text-center'>
-        <p className='orange_gradient text-center mb-6'>
+    <section className='mb-6 w-full flex-center flex-col'>
+      <h1 className='h2_text text-center orange_gradient text-center mb-6'>
         Our Services
-        </p>
       </h1>
-      </section>       
+    </section>       
       
       <ThemeProvider theme={theme}>
       <Box sx={{p:isMobile ? 1: 4, mb:isMobile ? 1 : 2, bgcolor:'white', width:1}}>

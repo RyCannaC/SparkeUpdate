@@ -37,10 +37,8 @@ const AboutUs = () => {
   return (
     <>
       <section className='mb-6 w-full flex-center flex-col'>
-        <h1 className='h2_text text-center'>
-          <p className='orange_gradient text-center mb-6'>
+        <h1 className='h2_text text-center orange_gradient text-center mb-6'>
           About Us
-         </p>
         </h1>
       </section>
       <ThemeProvider theme={theme}>

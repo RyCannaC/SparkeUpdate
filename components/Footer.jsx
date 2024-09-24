@@ -78,14 +78,8 @@ const Footer = () => {
                                 textAlign: 'center',          // Left-align the text
                               }}>
                             <Typography variant="h6">Follow Us</Typography>
-                            <IconButton href="https://facebook.com" color="inherit">
-                            <FacebookIcon />
-                            </IconButton>
                             <IconButton href="https://www.linkedin.com/company/spark-e-unlimited-electrical" color="inherit">
                             <LinkedInIcon />
-                            </IconButton>
-                            <IconButton href="https://linko.page/spark-e" color="inherit">
-                            <QrCode2Icon />
                             </IconButton>
                             <IconButton href="https://x.com/_Spark_E" color="inherit">
                             <XIcon />
@@ -96,9 +90,9 @@ const Footer = () => {
                     <Box textAlign="center" mt={4}>
                         <Typography variant="body2">
                             © 2024 Spark-E Unlimited Electrical Inc. |{' '}
-                            <Link href="/privacy" color="inherit">
+                            {/* <Link href="/privacy" color="inherit">
                             Privacy Policy
-                            </Link>
+                            </Link> */}
                         </Typography>
                     </Box>
                 </CardContent>
@@ -143,9 +137,6 @@ const Footer = () => {
                             <IconButton href="https://www.linkedin.com/company/spark-e-unlimited-electrical" color="inherit">
                             <LinkedInIcon />
                             </IconButton>
-                            <IconButton href="https://linko.page/spark-e" color="inherit">
-                            <QrCode2Icon />
-                            </IconButton>
                             <IconButton href="https://x.com/_Spark_E" color="inherit">
                             <XIcon />
                             </IconButton>
@@ -154,9 +145,9 @@ const Footer = () => {
                     <Box textAlign="center" mt={4}>
                         <Typography variant="body2">
                             © 2024 Spark-E Unlimited Electrical Inc. |{' '}
-                            <Link href="/privacy" color="inherit">
+                            {/* <Link href="/privacy" color="inherit">
                             Privacy Policy
-                            </Link>
+                            </Link> */}
                         </Typography>
                     </Box>
                 </CardContent>
