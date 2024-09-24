@@ -80,7 +80,7 @@ const AboutUs = () => {
           <Typography variant={isMobile ? 'body2' : 'body1'} sx={{padding:2, color: theme.palette.primary.cloudBurst }}>
                   Ryan began working in the IT field after graduating from college in 2004, but his passion for the electrical trade had him transition in 2011. After working in Nova Scotia and Ontario, Ryan received his Certificate of Qualification in 2018.
                   While working as an apprentice and Journeyman, he worked in a multitude of sites including underground mine in Sudbury, West Block of Canada's Parliament buildings and many other commerical and residential settings. 
-                  During the pandemic Ryan returned to IT to provide for his family, and holds a position as Team Lead of a Professional Servcies team, all while maintaining his electrical certification.
+                  During the pandemic Ryan returned to IT, and holds a position as Team Lead of a Professional Servcies team, all while maintaining his electrical certification.
                 </Typography>
                
                 <Typography variant={isMobile ? 'body2' : 'body1'} sx={{marginBottom: 2, padding:2, color: theme.palette.primary.cloudBurst }}>

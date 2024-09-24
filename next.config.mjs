@@ -2,10 +2,10 @@
 const nextConfig = {
     
     output: 'export',
-    compiler:{
+    compiler: {
       styledComponents: true
     },
-
+    reactStrictMode: false,
     images: {
         unoptimized: true,
       }

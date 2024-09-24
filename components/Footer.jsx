@@ -11,8 +11,11 @@ import CardContent  from '@mui/material/CardContent';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Image from 'next/image';
 import useIsMobile from './IsMobile';
-import QrCode2Icon from '@mui/icons-material/QrCode2';
 import XIcon from '@mui/icons-material/X';
+import PlaceIcon from '@mui/icons-material/Place';
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
+import BoltIcon from '@mui/icons-material/Bolt';
 
 const theme = createTheme({
     newcolors: {
@@ -89,7 +92,7 @@ const Footer = () => {
                     </Grid>
                     <Box textAlign="center" mt={4}>
                         <Typography variant="body2">
-                            © 2024 Spark-E Unlimited Electrical Inc. |{' '}
+                            © 2024 Spark-E Unlimited Electrical Inc.
                             {/* <Link href="/privacy" color="inherit">
                             Privacy Policy
                             </Link> */}
@@ -106,10 +109,36 @@ const Footer = () => {
                 <CardContent> 
                     <Grid container >
                         <Grid item='true' size={4}>
-                            <Typography variant="h6">Spark-E Unlimited Electrical Inc.</Typography>
-                            <Typography>367 Balinroan Crescent, Nepean, ON</Typography>
-                            <Typography>Email: info@sparkeunlimited.ca</Typography>
-                            <Typography>Phone: (343) 596-6337</Typography>
+                            <Typography paddingLeft={isMobile? 0 : 1.5} variant="h6">
+                              Spark-E Unlimited Electrical Inc.
+                            </Typography>
+                            <Typography>
+                              <IconButton 
+                                size="small"
+                                href="https://www.google.com/maps/place/367+Balinroan+Crescent,+Nepean,+ON+K2J+3V1/@45.2682511,-75.7353759,17z/data=!3m1!4b1!4m6!3m5!1s0x4ccdfcd0d8749eeb:0x97225472790c30f2!8m2!3d45.2682511!4d-75.732801!16s%2Fg%2F11c5dx6tmj?entry=ttu&g_ep=EgoyMDI0MDkyMi4wIKXMDSoASAFQAw%3D%3D" 
+                                color="inherit"
+                                >
+                              <PlaceIcon size="small" />
+                              </IconButton>
+                              367 Balinroan Crescent, Nepean, ON
+                            </Typography>
+                            <Typography>
+                              <IconButton 
+                                size="small"
+                                href="mailto:info@sparkeunlimited.ca" 
+                                color="inherit">
+                              <AlternateEmailIcon />
+                              </IconButton>info@sparkeunlimited.ca
+                            </Typography>
+                            <Typography>
+                            <IconButton 
+                                size="small"
+                                href="tel::3435966337" 
+                                color="inherit">
+                              <PhoneIphoneIcon />
+                              </IconButton>
+                              (343) 596-6337
+                            </Typography>
                         </Grid>
                         <Grid item='true' size={4}>
                         <Image
@@ -118,9 +147,9 @@ const Footer = () => {
                             sizes="100vw"
                             width= {100} 
                             height= {100}
-                            className="object-contain"
                             />
-                            <Typography>ECRA/ESA#: 7017645</Typography>
+                            <Typography>ECRA/ESA#:</Typography>
+                            <Typography>7017645</Typography>
                         </Grid>
                         <Grid item='true' size={2}>
                             <Typography variant="h6">Quick Links</Typography>
@@ -144,7 +173,7 @@ const Footer = () => {
                     </Grid>
                     <Box textAlign="center" mt={4}>
                         <Typography variant="body2">
-                            © 2024 Spark-E Unlimited Electrical Inc. |{' '}
+                            © 2024 Spark-E Unlimited Electrical Inc. 
                             {/* <Link href="/privacy" color="inherit">
                             Privacy Policy
                             </Link> */}
