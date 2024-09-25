@@ -48,7 +48,7 @@ const AboutUs = () => {
           </Typography>
             
               <Typography variant={isMobile ? 'body2' : 'body1'} sx={{ marginBottom: 2, color: theme.palette.primary.cloudBurst }}>
-                Spark-E Unlimited Electrical Inc., is a small business that believes in delivering not only top-tier electrical services but also exceptional communication and customer care.
+                Spark-E Unlimited Electrical Inc., is a small, local, business that believes in delivering not only top-tier electrical services but also exceptional communication and customer care.
                 From your initial consultation to the completion of your project, I prioritize keeping you informed every step of the way.
               </Typography>
               <Typography variant={isMobile ? 'body2' : 'body1'} sx={{ marginBottom: 2, color: theme.palette.primary.cloudBurst }}>
@@ -83,12 +83,12 @@ const AboutUs = () => {
                   </Typography>
               </Grid>
             
-              <Grid item='true' size={12} sx={{margin: isMobile ? 0 : 4, display: 'flex', textAlign: 'left', justifyContent: 'center' }}>
+              <Grid item='true' size={12} sx={{marginBottom: isMobile ? 0 : 4, marginLeft: isMobile ? 0 : 4, marginRight: isMobile ? 0 : 4, display: 'flex', textAlign: 'left', justifyContent: 'center' }}>
               
                 
                 <Typography variant={isMobile ? 'body2' : 'body1'} sx={{ marginLeft:isMobile? 0 : 6, marginRight:isMobile? 0 : 6, marginBottom: 2, color: theme.palette.primary.cloudBurst }}>
                   
-                  I'm Ryan Maxwell, owner of Spark-E Unlimited Electrical Inc. After years of experience in the electrical industry, I earned my Certificate of Qualifications in 2018. In 2024, I proudly achieved both my master electrician and contractor's licenses.
+                  I&apos;m Ryan Maxwell, owner of Spark-E Unlimited Electrical Inc. After years of experience in the electrical industry, I earned my Certificate of Qualifications in 2018. In 2024, I proudly achieved both my master electrician and contractor's licenses.
                <br/><br/>
                   In addition to my passion for electrical work, I&apos;m actively involved in my community as the head coach for both the Nepean Minor Hockey Association and East Nepean Little League. I take pride in volunteering beyond coaching, to support these organizations and the young athletes. As a father of three boys who are passionate about hockey, baseball, and football, I love watching them excel in sports and academics.
                   Outside of work and coaching, I enjoy camping, hiking, and attending live music events.               
