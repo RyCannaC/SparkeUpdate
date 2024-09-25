@@ -10,8 +10,7 @@ export async function POST(req, res) {
       port: 587, 
       secure: false, 
       auth: {
-        user: 'AKIAU4U3VUHSXLLZSXWO',
-        pass: 'BH6UY8EBuH5myvBmHj3Ybbgrm/mL+1YWZQP5aEURUnx0',
+       
       },
     });
 
