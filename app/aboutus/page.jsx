@@ -37,70 +37,37 @@ const AboutUs = () => {
   return (
     <>
       <section className='mb-6 w-full flex-center flex-col'>
-        <h1 className='h1_text text-center orange_gradient text-center mb-6'>
+        <h1 className='h1_text text-center orange_gradient text-center mb-6 pb-2'>
           About Us
         </h1>
       </section>
       <ThemeProvider theme={theme}>
-      <Box sx={{bgcolor:'white', marginBottom:isMobile ? 1 : 2, p:4, width:1}}>
-        <Typography variant={isMobile ? 'body2' : 'body1'} sx={{ marginBottom:2,  color:theme.palette.primary.cloudBurst}}>
-        At Spark-E Unlimited Electrical Inc., we combine technical expertise with strong project management to provide top-tier electrical services for residential and commercial clients. Our founder's extensive experience as both a client-facing electrician and project manager ensures that every project is handled with professionalism, precision, and clear communication.
-        </Typography>
-        <Typography variant={isMobile ? 'body2' : 'body1'} sx={{ marginBottom:2,  color:theme.palette.primary.cloudBurst}}>
-        With a wide range of skills, our team offers services like wiring, installing lighting, pools or hot tubs, and home generators. We take pride in leading large-scale installations, such as fire alarm systems at the Bank of Canada and advanced control systems at Vale mines. From planning and cost assessments to quality assurance, we deliver projects on time and within budget.
-        </Typography>
-        <Typography variant={isMobile ? 'body2' : 'body1'} sx={{ marginBottom:2,  color:theme.palette.primary.cloudBurst}}>
-        Efficiency is central to our approach. We optimize daily service calls, provide same-day service when possible, and manage complex multi-phase projects with precision. At Spark-E Unlimited, we’re dedicated to delivering energy-efficient, safe, and innovative electrical solutions with a focus on client satisfaction and high-quality outcomes.
-        </Typography>
-        <Typography variant={isMobile ? 'h6' : 'h5'} sx={{textAlign:'center', marginBottom:2,  background: 'linear-gradient(to right, #f59e0b, #f97316, #fcd34d)',
-                                WebkitBackgroundClip: 'text',
-                                WebkitTextFillColor: 'transparent', }}>
-          Let Spark-E Unlimited Electrical Inc. power your next project with the expertise and reliability you can count on.
-        </Typography>
-
-      </Box>
-     
-      {isMobile ? (
-        <Box sx={{bgcolor:'white', width: 1, margin:2 , textAlign: 'left' }}>
-          <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: 1, marginTop: 4 }}>
-            <Image
-              src="/assets/img/pro_headshot-min.jpg"
-              alt="rmaxwell_headshot"
-              width={100}
-              height={100}
-              style={imageStyle}
-            />
+      <Box sx={{ marginBottom: isMobile ? 1 : 2, bgcolor: 'white', p: isMobile ? 2 : 4, width: 1 }}>
+      <Typography variant={isMobile ? 'h6' : 'h4'} sx={{ textAlign: 'center', marginBottom:4, fontWeight:'bold', color:theme.palette.primary.dark}}>
+              Who is Spark-E Unlimited?
+          </Typography>
             
+              <Typography variant={isMobile ? 'body2' : 'body1'} sx={{ marginBottom: 2, color: theme.palette.primary.cloudBurst }}>
+                Spark-E Unlimited Electrical Inc., is a small business that believes in delivering not only top-tier electrical services but also exceptional communication and customer care.
+                From your initial consultation to the completion of your project, I prioritize keeping you informed every step of the way.
+              </Typography>
+              <Typography variant={isMobile ? 'body2' : 'body1'} sx={{ marginBottom: 2, color: theme.palette.primary.cloudBurst }}>
+                As a fully licensed and insured electrician, I am committed to ensuring that all work is performed with the highest standards of safety and in full compliance with local and national electrical codes.
+                I&apos;m here to answer your questions and ensure every detail meets your expectations, giving you peace of mind knowing your project is in expert hands.
+              </Typography>
+         
+        
           </Box>
-        <Typography variant={isMobile ? 'body2' : 'body1'} sx={{ marginTop:2, fontWeight:'bold', textAlign: 'center',  color:theme.palette.primary.dark}}>
-        Ryan Maxwell, <br/>
-        Owner and Master Electrician
-            </Typography>
-          
-          <Typography variant={isMobile ? 'body2' : 'body1'} sx={{padding:2, color: theme.palette.primary.cloudBurst }}>
-                  Ryan began working in the IT field after graduating from college in 2004, but his passion for the electrical trade had him transition in 2011. After working in Nova Scotia and Ontario, Ryan received his Certificate of Qualification in 2018.
-                  While working as an apprentice and Journeyman, he worked in a multitude of sites including underground mine in Sudbury, West Block of Canada's Parliament buildings and many other commerical and residential settings. 
-                  During the pandemic Ryan returned to IT, and holds a position as Team Lead of a Professional Servcies team, all while maintaining his electrical certification.
-                </Typography>
-               
-                <Typography variant={isMobile ? 'body2' : 'body1'} sx={{marginBottom: 2, padding:2, color: theme.palette.primary.cloudBurst }}>
-                  In 2024, Ryan achieved both his Master’s and Contractor’s licenses, solidifying his expertise in the electrical industry. His unique combination of technical knowledge, project management skills, and client-focused communication has made him a leader across both IT and electrical sectors.
-                </Typography>
-        </Box>
-      
-
-):(
+     
+     
   
 
     <Box sx={{bgcolor:'white', marginBottom:isMobile ? 1 : 2, width:1}}>
-      <Typography variant={isMobile ? 'h6' : 'h4'} sx={{textAlign: 'center', marginBottom:2, marginTop:2, fontWeight:'bold', color:theme.palette.primary.dark}}>
-              Who are we?
-          </Typography>
-          
-          <Box sx={{ width: "70%", margin: '0 auto', textAlign: 'left' }}>
-            <Grid container spacing={2} alignItems="center" sx={{ marginTop: 2 }}>
+                
+          <Box sx={{paddingTop: 4, width: isMobile? '100%': '70%', margin: '0 auto', textAlign: 'left' }}>
+            <Grid container spacing={2} alignItems="center" sx={{ margin:2 }}>
               {/* Image Section */}
-              <Grid item='true' size={4} sx={{marginBottom:4, display: 'flex', textAlign: 'center', justifyContent: 'center' }}>
+              <Grid item='true' size={12} sx={{display: 'flex', textAlign: 'center', justifyContent: 'center' }}>
                 <Image
                   src="/assets/img/pro_headshot-min.jpg"
                   alt="rmaxwell_headshot"
@@ -110,26 +77,29 @@ const AboutUs = () => {
                 />
                 
               </Grid>
-
-              {/* Text Section */}
-              <Grid item='true' size={8} sx={{paddingRight:8}}>
-              <Typography variant={isMobile ? 'body2' : 'body1'} sx={{fontWeight: 'bold',  color: theme.palette.primary.cloudBurst }}>
-                  Ryan Maxwell, Owner and Master Electrician
-                </Typography>
-                <Typography variant={isMobile ? 'body2' : 'body1'} sx={{ marginTop: 2, marginBottom: 2, color: theme.palette.primary.cloudBurst }}>
-                  Ryan began his career in IT after graduating from college in 2004, transitioning to the electrical trade in 2011. He earned his Certificate of Qualification in 2018. During the pandemic, Ryan returned to IT, where he now serves as Team Lead for the Professional Services team.
-                </Typography>
-               
-                <Typography variant={isMobile ? 'body2' : 'body1'} sx={{ marginTop: 2, marginBottom: 2, color: theme.palette.primary.cloudBurst }}>
-                  In 2024, Ryan achieved both his Master’s and Contractor’s licenses, solidifying his expertise in the electrical industry. His unique combination of technical knowledge, project management skills, and client-focused communication has made him a leader across both IT and electrical sectors.
+              <Grid item='true' size={12} sx={{display: 'flex', textAlign: 'center', justifyContent: 'center' }}>
+                <Typography variant={isMobile ? 'body2' : 'body1'} sx={{fontWeight: 'bold',  color: theme.palette.primary.cloudBurst }}>
+                    Ryan Maxwell <br/>Owner, Master Electrician
+                  </Typography>
+              </Grid>
+            
+              <Grid item='true' size={12} sx={{margin: isMobile ? 0 : 4, display: 'flex', textAlign: 'left', justifyContent: 'center' }}>
+              
+                
+                <Typography variant={isMobile ? 'body2' : 'body1'} sx={{ marginLeft:isMobile? 0 : 6, marginRight:isMobile? 0 : 6, marginBottom: 2, color: theme.palette.primary.cloudBurst }}>
+                  
+                  I'm Ryan Maxwell, owner of Spark-E Unlimited Electrical Inc. After years of experience in the electrical industry, I earned my Certificate of Qualifications in 2018. In 2024, I proudly achieved both my master electrician and contractor's licenses.
+               <br/><br/>
+                  In addition to my passion for electrical work, I&apos;m actively involved in my community as the head coach for both the Nepean Minor Hockey Association and East Nepean Little League. I take pride in volunteering beyond coaching, to support these organizations and the young athletes. As a father of three boys who are passionate about hockey, baseball, and football, I love watching them excel in sports and academics.
+                  Outside of work and coaching, I enjoy camping, hiking, and attending live music events.               
+                  <br/><br/>
+                  I take pride in providing top-notch service with a focus on clear communication and strong project management. I look forward to helping you with your electrical needs!                
                 </Typography>
               </Grid>
             </Grid>
+            </Box>
           </Box>
-        </Box>
         
-)
-}
       
 </ThemeProvider>
       

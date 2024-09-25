@@ -79,7 +79,7 @@ const ContactUs = () => {
     <>
     
       <section className='mb-6 w-full flex-center flex-col'>
-        <h1 className='h2_text text-center orange_gradient text-center mb-6'>
+        <h1 className='h1_text text-center orange_gradient text-center mb-6 pb-2'>
           Contact Us
         </h1>
       </section>

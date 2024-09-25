@@ -36,7 +36,7 @@ export default function Nav() {
           justifyContent: 'space-between',
           alignItems: 'center',
           width: '100%',
-          mb: 10,
+          mb: 4,
           pt: 3,
         }}
       >
@@ -137,7 +137,7 @@ export default function Nav() {
             <Link href="/aboutus" passHref>
               <InfoIcon /> About Us
             </Link>
-            <Link href="/contacus">
+            <Link href="/contactus">
               <Button
                 variant="contained"
                 sx={{
@@ -172,9 +172,7 @@ export default function Nav() {
       <Typography
       variant="h2"
       align="center"
-      sx={{
-        mt: 5, // Margin top
-        mb: 6, // Margin bottom
+      sx={{       
         fontSize: { xs: '3rem', sm: '5rem' }, // Responsive font size
         fontWeight: 'extrabold', // Font weight
         lineHeight: 1.15, // Line height

@@ -43,37 +43,31 @@ const Home = () => {
   return (
     <>
       <section className='mb-6 w-full flex-center flex-col'>
-        <h1 className='h1_text text-center orange_gradient text-center mb-6'>
+        <h1 className='h1_text text-center orange_gradient text-center mb-6 pb-2'>
             Reliable Energy Solutions
 
         </h1>
       </section>
 
       <ThemeProvider theme={theme}>
-        <Box sx={{ marginBottom: isMobile ? 1 : 2, bgcolor: 'white', p: isMobile ? 2 : 4, width: 1 }}>
-          {isMobile ? (
-            <>
-              <Typography variant='body2' sx={{ marginBottom: 2, color: theme.palette.primary.cloudBurst }}>
-                Spark-E Unlimited Electrical Inc., believes in delivering not only top-tier electrical services but also exceptional communication and customer care.
-                From your initial consultation to the completion of your project, we prioritize keeping you informed every step of the way.
-              </Typography>
-              <Typography variant='body2' sx={{ marginBottom: 2, color: theme.palette.primary.cloudBurst }}>
-                Our fully licensed and insured electricians are committed to ensuring that all work is performed with the highest standards of safety and in full compliance with local and national electrical codes.
-                We're here to answer your questions and ensure every detail meets your expectations, giving you peace of mind knowing your project is in expert hands.
-              </Typography>
-            </>
-          ) : (
-            <Typography variant='body1' sx={{ marginBottom: 2, color: theme.palette.primary.cloudBurst }}>
-              Spark-E Unlimited Electrical Inc., believes in delivering not only top-tier electrical services but also exceptional communication and customer care.
-              From your initial consultation to the completion of your project, we prioritize keeping you informed every step of the way.
-              Our fully licensed and insured electricians are committed to ensuring that all work is performed with the highest standards of safety and in full compliance with local and national electrical codes.
-              We're here to answer your questions and ensure every detail meets your expectations, giving you peace of mind knowing your project is in expert hands.
-            </Typography>
-          )}
+
+      <Box sx={{bgcolor:'white', marginBottom:isMobile ? 1 : 2, p: isMobile ? 2 : 4, width:1}}>
+      <Typography variant={isMobile ? 'h6' : 'h4'} sx={{textAlign:'center', marginBottom:2, fontWeight: 'bold'  }}>
+          Expertise and Reliability You Can Count On
+        </Typography>
+        <Typography variant={isMobile ? 'body2' : 'body1'} sx={{ marginBottom:2,  color:theme.palette.primary.cloudBurst}}>
+        At Spark-E Unlimited Electrical Inc., we combine technical expertise with strong project management to provide top-tier electrical services for residential and commercial clients. Our founder's extensive experience as both a client-facing electrician and project manager ensures that every project is handled with professionalism, precision, and clear communication.
+        </Typography>
+        <Typography variant={isMobile ? 'body2' : 'body1'} sx={{ marginBottom:2,  color:theme.palette.primary.cloudBurst}}>
+        With a wide range of skills, our team offers services like wiring, installing lighting, pools or hot tubs, and home generators. From planning and cost assessments to quality assurance, we deliver projects on time and within budget.
+        </Typography>
+        <Typography variant={isMobile ? 'body2' : 'body1'} sx={{ marginBottom:2,  color:theme.palette.primary.cloudBurst}}>
+        Efficiency is central to our approach. We optimize daily service calls, provide same-day service when possible, and manage complex multi-phase projects with precision. At Spark-E Unlimited, we’re dedicated to delivering energy-efficient, safe, and innovative electrical solutions with a focus on client satisfaction and high-quality outcomes.
+        </Typography>     
 
           <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
             <Typography variant={isMobile ? 'h6' : 'h4'} sx={{ textAlign: 'center', marginBottom: 2, fontWeight: 'bold', color: theme.palette.primary.dark }}>
-              How we communicate:
+              How We Communicate:
             </Typography>
 
             <List dense>
@@ -111,6 +105,7 @@ const Home = () => {
               </ListItem>
             </List>
           </Box>
+          
         </Box>
       </ThemeProvider>
 
