@@ -111,6 +111,10 @@
   @apply mt-5 text-5xl font-extrabold leading-[1.15] text-white sm:text-3xl;
 }
 
+.h1_text {
+  @apply mt-5 text-7xl font-extrabold leading-[1.15] text-white sm:text-5xl;
+}
+
 .orange_gradient {
   @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
 }

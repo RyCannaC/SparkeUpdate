@@ -83,10 +83,7 @@ const ContactUSFooter = ({contactPage}) => {
                     }}
                     >
                         
-                    
-                </Box>
-            </Box>
-                <Grid container alignItems="center">
+                {/* <Grid container alignItems="center">
                     <Grid item="true" size={12} sx={{ display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
                         <Typography
                             variant={titleVariant}
@@ -142,7 +139,11 @@ const ContactUSFooter = ({contactPage}) => {
                         Sat-Sun: 9:00 AM – 9:00 PM
                     </Typography>
                 </Grid>
-                </Grid>
+                </Grid> */}
+                </Box>
+                
+            </Box>
+                
             </ThemeProvider>
         )
         

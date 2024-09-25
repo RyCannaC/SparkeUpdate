@@ -37,7 +37,7 @@ const Services = () => {
   return (
     <>
     <section className='mb-6 w-full flex-center flex-col'>
-      <h1 className='h2_text text-center orange_gradient text-center mb-6'>
+      <h1 className='h1_text text-center orange_gradient text-center mb-6'>
         Our Services
       </h1>
     </section>       

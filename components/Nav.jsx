@@ -15,6 +15,8 @@ import MenuSharpIcon from '@mui/icons-material/MenuSharp';
 import CloseIcon from '@mui/icons-material/Close';
 import useIsMobile from '@/components/IsMobile';
 import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Button from "@mui/material/Button";
 
 export default function Nav() {
   const isMobile = useIsMobile();
@@ -26,135 +28,164 @@ export default function Nav() {
   };
 
   return (
-   <>
-   <nav className="flex-between w-full mb-10 pt-3">
-      <Link href="/" className="flex gap-2 flex-center">
-        <Image
-          src="/assets/img/larger_icon.png"
-          alt="logo"
-          width={100}
-          height={100}
-          className="object-contain"
-        />
-       
-      </Link>
-      {isMobile ? (
-        <div className="flex relative">
-          <button
-            onClick={toggleMenu}
-            className="text-white focus:outline-none"
-          >
-            {isMenuOpen ? (
-              <CloseIcon /> // Close icon
-            ) : (
-              <MenuSharpIcon /> // Menu icon
-            )}
-          </button>
-
-          {isMenuOpen && (
-
-            <Paper
-              elevation={3} // Adds the shadow effect
-              sx={{
-                position: 'absolute',    // Same as "absolute" in Tailwind
-                top: '100%',             // Same as "top-full" in Tailwind (position it just below the triggering element)
-                right: 0,                // Align to the right
-                mt: 2,                   // Same as "mt-2" for margin-top
-                bgcolor: 'white',        // Same as "bg-white"
-                borderRadius: '8px',     // Same as "rounded-md"
-                zIndex: 10,              // Same as "z-10"
-              }}
-            >
-              <MenuList>
-                <MenuItem>
-                  <ListItemIcon>
-                    <HomeIcon />
-                  </ListItemIcon>
-                  <Link href="/" onClick={toggleMenu}>
-                    Home
-                  </Link>
-                </MenuItem>
-                <MenuItem>
-                  <ListItemIcon>
-                    <ElectricalServicesIcon/>
-                  </ListItemIcon>
-                  <Link href="/services" onClick={toggleMenu}>
-                    Services
-                  </Link>
-                </MenuItem>
-                
-                <MenuItem>
-                <ListItemIcon>
-                    <InfoIcon/>
-                  </ListItemIcon>
-                  <Link href="/aboutus" onClick={toggleMenu}>
-                    About Us
-                  </Link>
-                </MenuItem>
-                {/* Put Contact us after appointment once fully developed */}
-                <MenuItem className="orange_gradient">
-                <ListItemIcon>
-                    <AlternateEmailIcon/>
-                  </ListItemIcon>
-                  <Link href="/contactus" onClick={toggleMenu}>
-                    Contact Us
-                  </Link>
-                </MenuItem>
-                {/* <ListItem className="orange_gradient">
-                  <ListItemIcon>
-                    <CalendarMonthIcon/>
-                  </ListItemIcon>
-                  <Link href="/calendar"  onClick={toggleMenu}>
-                    Appointment
-                  </Link>
-                </ListItem> */}
-              </MenuList>
-            </Paper>
-          )}
-      </div>
-    ):(
+    <>
       <Box
+        component="nav"
         sx={{
-          display: 'flex',            // Replaces "flex"
-          gap: 3,                     // Replaces "gap-3" (spacing between children)
-          color: 'white',             // Replaces "text-white"
-          outline: 'none',            // Replaces "focus:outline-none"
-          '&:focus': { outline: 'none' } // Ensures focus state outline is none
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          width: '100%',
+          mb: 10,
+          pt: 3,
         }}
       >
-          <HomeIcon/>
-          <Link href="/" >
-            Home
-          </Link>
-          <ElectricalServicesIcon/>
-          <Link href="/services" >
-            Services
-          </Link>
-          
-          <InfoIcon/>
-          <Link href="/aboutus" >
-            About Us
-          </Link>
-          {/* Put Contact us after appointment once fully developed */}
-          
-          <Link href="/contactus" className="orange_grad_btn" onClick={toggleMenu}>
-                    Contact Us
-                  </Link>
-          {/* <CalendarMonthIcon/>
-          <Link href="/calendar" className="white_btn">
-            Book Appointment
-          </Link> */}
-        
-      </Box>
-    )}
-         
-    </nav>
-    <h2 className='mb-6 head_text text-center'>
-    <span className='orange_gradient text-center'>Spark-E Unlimited Electrical Inc.</span>  
-    </h2>
-   </>
+        {/* Logo */}
+        <Link href="/" passHref>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+            <Image
+              src="/assets/img/larger_icon.png"
+              alt="logo"
+              width={100}
+              height={100}
+              style={{ objectFit: 'contain' }}
+            />
+          </Box>
+        </Link>
 
-    
-   
+        {/* Menu - Mobile Version */}
+        {isMobile ? (
+          <Box sx={{ position: 'relative', display: 'flex' }}>
+            <button onClick={toggleMenu} style={{ color: 'white', border: 'none', background: 'transparent' }}>
+              {isMenuOpen ? <CloseIcon /> : <MenuSharpIcon />}
+            </button>
+
+            {isMenuOpen && (
+              <Paper
+                elevation={3}
+                sx={{
+                  position: 'absolute',
+                  top: '100%',
+                  right: 0,
+                  mt: 2,
+                  bgcolor: 'white',
+                  borderRadius: '8px',
+                  zIndex: 10,
+                }}
+              >
+                <MenuList>
+                  <MenuItem onClick={toggleMenu}>
+                    <ListItemIcon>
+                      <HomeIcon />
+                    </ListItemIcon>
+                    <Link href="/" passHref>
+                      Home
+                    </Link>
+                  </MenuItem>
+                  <MenuItem onClick={toggleMenu}>
+                    <ListItemIcon>
+                      <ElectricalServicesIcon />
+                    </ListItemIcon>
+                    <Link href="/services" passHref>
+                      Services
+                    </Link>
+                  </MenuItem>
+                  <MenuItem onClick={toggleMenu}>
+                    <ListItemIcon>
+                      <InfoIcon />
+                    </ListItemIcon>
+                    <Link href="/aboutus" passHref>
+                      About Us
+                    </Link>
+                  </MenuItem>
+                  <MenuItem sx={{background: 'linear-gradient(to right, #f59e0b, #ea580c, #fbbf24)',}} onClick={toggleMenu}>
+                    <ListItemIcon>
+                      <AlternateEmailIcon />
+                    </ListItemIcon>
+                    <Link 
+                      
+                      href="/contactus" passHref>
+                      Contact Us
+                    </Link>
+                  </MenuItem>
+                </MenuList>
+              </Paper>
+            )}
+          </Box>
+        ) : (
+          /* Menu - Desktop Version */
+          <Box
+            sx={{
+              display: 'flex',
+              gap: 3,
+              color: 'white',
+              '& a': {
+                textDecoration: 'none',
+                color: 'inherit',
+                display: 'flex',
+                alignItems: 'center',
+                gap: 1,
+              },
+            }}
+          >
+            <Link href="/" passHref>
+              <HomeIcon /> Home
+            </Link>
+            <Link href="/services" passHref>
+              <ElectricalServicesIcon /> Services
+            </Link>
+            <Link href="/aboutus" passHref>
+              <InfoIcon /> About Us
+            </Link>
+            <Link href="/contacus">
+              <Button
+                variant="contained"
+                sx={{
+                  background: 'linear-gradient(to right, #f59e0b, #ea580c, #fbbf24)', // Matches Tailwind's amber-500, orange-600, yellow-500
+                  borderRadius: '9999px', // Fully rounded (rounded-full in Tailwind)
+                  border: '1px solid white', // White border
+                  paddingY: '6px', // Equivalent to py-1.5 (6px padding)
+                  paddingX: '20px', // Equivalent to px-5 (20px padding)
+                  color: 'black',
+                  textTransform: 'none', // Prevents uppercase transformation (optional)
+                  fontSize: '0.875rem', // text-sm equivalent (14px)
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  fontFamily: 'Inter, sans-serif',
+                  transition: 'all 0.3s ease-in-out',
+                  '&:hover': {
+                    background: 'black', // Black background on hover
+                    color: 'white', // White text on hover
+                  },
+                }}
+              >
+                Contact Us
+              </Button>
+            </Link>
+            
+          </Box>
+        )}
+      </Box>
+
+      {/* Title */}
+      <Typography
+      variant="h2"
+      align="center"
+      sx={{
+        mt: 5, // Margin top
+        mb: 6, // Margin bottom
+        fontSize: { xs: '3rem', sm: '5rem' }, // Responsive font size
+        fontWeight: 'extrabold', // Font weight
+        lineHeight: 1.15, // Line height
+        background: 'linear-gradient(to right, #f59e0b, #ea580c, #fbbf24)',
+        WebkitBackgroundClip: 'text', // Clip background to text
+        WebkitTextFillColor: 'transparent', // Make text transparent
+      }}
+      className="head_text"
+    >
+      Spark-E Unlimited Electrical Inc.
+    </Typography>
+    </>
   );
 }
