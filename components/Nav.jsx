@@ -111,7 +111,10 @@ export default function Nav() {
                   opacity: page === 'Promotions' ? 0.5 : 1,
                   }}
                   key={page} 
-                  onClick={() => router.push(pageRoutes[page])}
+                  onClick={() => {
+                    handleCloseNavMenu(); // Close the menu
+                    router.push(pageRoutes[page]); // Navigate to the desired page
+                  }}
                   
                   >
                     {pageIcons[page]} 
