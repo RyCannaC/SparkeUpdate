@@ -42,13 +42,38 @@ const Home = () => {
 
   return (
     <>
-      <section className='mb-6 w-full flex-center flex-col'>
-        <h1 className='h1_text text-center orange_gradient text-center mb-6 pb-2'>
-            Reliable Energy Solutions
+             {isMobile ? (
+  <section className="mb-6 w-full flex-center flex-col">
+    <h2 className="h2_text text-center orange_gradient mb-6 pb-2">
+      Reliable Energy Solutions
+    </h2>
+  </section>
+) : (
+  <>
+    <Typography
+      variant="h2"
+      align="center"
+      sx={{
+        fontSize: { xs: '3rem', sm: '5rem' }, // Responsive font size
+        fontWeight: 'extrabold', // Font weight
+        lineHeight: 1.15, // Line height
+        background: 'linear-gradient(to right, #f59e0b, #ea580c, #fbbf24)',
+        WebkitBackgroundClip: 'text', // Clip background to text
+        WebkitTextFillColor: 'transparent', // Make text transparent
+      }}
+      className="head_text"
+    >
+      Spark-E Unlimited Electrical Inc.
+    </Typography>
+    <section className="mb-6 w-full flex-center flex-col">
+      <h1 className="h1_text text-center orange_gradient mb-6 pb-2">
+        Reliable Energy Solutions
+      </h1>
+    </section>
+  </>
+)}
 
-        </h1>
-      </section>
-
+        
       <ThemeProvider theme={theme}>
 
       <Box sx={{bgcolor:'white', marginBottom:isMobile ? 1 : 2, p: isMobile ? 2 : 4, width:1}}>

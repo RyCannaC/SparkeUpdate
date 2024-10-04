@@ -38,11 +38,35 @@ export default function AccordionFAQ() {
   const isMobile = useIsMobile();
   return (
     <>
-    <section className='mb-6 w-full flex-center flex-col'>
-        <h1 className='h1_text text-center orange_gradient text-center mb-6 pb-2'>
-          Frequently Asked Questions
-        </h1>
+            {isMobile?(
+          <section className='mb-6 w-full flex-center flex-col'>
+          <h2 className='h2_text text-center orange_gradient text-center mb-6 pb-2'>
+          FAQ
+        </h2>
       </section>
+        ):(
+          <section className='mb-6 w-full flex-center flex-col'>
+            <Typography
+            variant="h2"
+            align="center"
+            sx={{       
+              fontSize: { xs: '3rem', sm: '5rem' }, // Responsive font size
+              fontWeight: 'extrabold', // Font weight
+              lineHeight: 1.15, // Line height
+              background: 'linear-gradient(to right, #f59e0b, #ea580c, #fbbf24)',
+              WebkitBackgroundClip: 'text', // Clip background to text
+              WebkitTextFillColor: 'transparent', // Make text transparent
+            }}
+            className="head_text"
+            >
+            Spark-E Unlimited Electrical Inc.
+          </Typography>
+            <h1 className='h1_text text-center orange_gradient text-center mb-6 pb-2'>
+            FAQ
+          </h1>
+        </section>
+        )}
+        
       <ThemeProvider theme={theme}>
       <Box sx={{ marginBottom: isMobile ? 1 : 2, bgcolor: 'white', p: isMobile ? 2 : 4, width: 1 }}>
       <Typography variant={isMobile ? 'h6' : 'h4'} sx={{ textAlign: 'center', marginBottom:4, fontWeight:'bold', color:theme.palette.primary.dark}}>
@@ -62,6 +86,7 @@ export default function AccordionFAQ() {
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1-content"
           id="panel1-header"
+          sx={{className: 'orange_gradient'}}
         >
           What is a Licensed Electrical Contractor and why should I hire one?
         </AccordionSummary>
@@ -138,7 +163,7 @@ export default function AccordionFAQ() {
           What areas do you serve?
         </AccordionSummary>
         <AccordionDetails>
-        I proudly serve clients in Ottawa and surrounding areas and I&apos;m also pleased to offer services across most of Ontario. Please contact me to confirm I can assist you in your location.
+        I proudly serve clients in Ottawa and surrounding areas and I&apos;m also pleased to offer services across most of Ontario. Please contact me to confirm that I can assist you in your location.
         </AccordionDetails>
        
       </Accordion>
@@ -151,14 +176,14 @@ export default function AccordionFAQ() {
           How do I schedule an appointment? 
         </AccordionSummary>
         <AccordionDetails>
-        You can schedule an appointment by calling us directly at 
+        You can schedule an appointment by calling me directly at &nbsp;
             <Link
                 size="small"
                 href="tel::3435966337" 
                 color="inherit">                              
                 (343) 596-6337
             </Link> 
-            or by email at 
+            &nbsp; or by email at &nbsp;
             <Link
                 size="small"
                 href="mailto::rmaxwell@sparkeunlimited.ca" 
@@ -188,7 +213,7 @@ export default function AccordionFAQ() {
           Can you install standby generators or EV chargers?  
         </AccordionSummary>
         <AccordionDetails>
-        Yes, I specialize in the installation of standby generators (including Generac) and EV chargers. I’ll guide you through the process and ensure the installation meets all safety and performance standards.
+        Yes, I specialize in the installation of standby generators (including Generac) and EV chargers. I&apos;ll guide you through the process and ensure the installation meets all safety and performance standards.
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -224,7 +249,7 @@ export default function AccordionFAQ() {
           What should I do if I have flickering lights or frequent power outages?
         </AccordionSummary>
         <AccordionDetails>
-        Flickering lights or frequent power outages may be a sign of a bigger electrical issue, such as faulty wiring or an overloaded circuit. Contact us immediately for an inspection, and I&apos;ll diagnose and resolve the problem.
+        Flickering lights or frequent power outages may be a sign of a bigger electrical issue, such as faulty wiring or an overloaded circuit. Contact me immediately for an inspection, and I&apos;ll diagnose and resolve the problem.
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -236,7 +261,7 @@ export default function AccordionFAQ() {
          How often should I schedule electrical maintenance for my home or business?  
         </AccordionSummary>
         <AccordionDetails>
-        Regular electrical maintenance is crucial for safety and efficiency. I recommend scheduling an inspection at least once a year or whenever you notice any electrical issues. Our maintenance packages also help ensure your systems remain in top condition.
+        Regular electrical maintenance is crucial for safety and efficiency. I recommend scheduling an inspection at least once a year or whenever you notice any electrical issues. My maintenance packages also help ensure your systems remain in top condition.
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -248,7 +273,7 @@ export default function AccordionFAQ() {
           What is your warranty on services or installations?
         </AccordionSummary>
         <AccordionDetails>
-        I stand behind our work with a satisfaction guarantee. Our installations come with a 1 Year warranty, covering labor and materials. Please ask for more details on specific warranties for products and services.
+        I stand behind my work with a satisfaction guarantee. My installations come with a 1 Year warranty, covering labor and materials. Please ask for more details on specific warranties for products and services.
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -272,7 +297,7 @@ export default function AccordionFAQ() {
           Do you offer any discounts or promotions?
         </AccordionSummary>
         <AccordionDetails>
-        I frequently offer seasonal promotions, including discounts on services such as standby generator maintenance and installation. Be sure to ask about our current offers, and check our website for updates.
+        I frequently offer seasonal promotions, including discounts on services such as standby generator maintenance and installation. Be sure to ask about my current offers, and check my website for updates.
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -284,7 +309,7 @@ export default function AccordionFAQ() {
           What types of payment do you accept?
         </AccordionSummary>
         <AccordionDetails>
-        I accept a few forms of payment, but primarily I accept cash and e-transfers. I also offer financing options for larger projects to help make your electrical upgrades more affordable.
+        I accept cash and e-transfers at the moment. I will look at expanding these options in the future.
         </AccordionDetails>
       </Accordion>
       </Box>

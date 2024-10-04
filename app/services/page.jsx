@@ -36,12 +36,35 @@ const Services = () => {
   const isMobile = useIsMobile();
   return (
     <>
-    <section className='mb-6 w-full flex-center flex-col'>
-      <h1 className='h1_text text-center orange_gradient text-center mb-6'>
-        Our Services
-      </h1>
-    </section>       
-      
+        {isMobile?(
+          <section className='mb-6 w-full flex-center flex-col'>
+            <h2 className='h2_text text-center orange_gradient text-center mb-6 pb-2'>
+              Services        
+            </h2>
+          </section>
+        ):(
+          <section className='mb-6 w-full flex-center flex-col'>
+            <Typography
+            variant="h2"
+            align="center"
+            sx={{       
+              fontSize: { xs: '3rem', sm: '5rem' }, // Responsive font size
+              fontWeight: 'extrabold', // Font weight
+              lineHeight: 1.15, // Line height
+              background: 'linear-gradient(to right, #f59e0b, #ea580c, #fbbf24)',
+              WebkitBackgroundClip: 'text', // Clip background to text
+              WebkitTextFillColor: 'transparent', // Make text transparent
+            }}
+            className="head_text"
+            >
+            Spark-E Unlimited Electrical Inc.
+          </Typography>
+            <h1 className='h1_text text-center orange_gradient text-center mb-6 pb-2'>
+            Services
+          </h1>
+        </section>
+        )}
+        
       <ThemeProvider theme={theme}>
       <Box sx={{p:isMobile ? 1: 4, mb:isMobile ? 1 : 2, bgcolor:'white', width:1}}>
           <Typography padding={isMobile ? 0 : 2} variant='h5' sx={{textAlign: isMobile ? 'left' :'center', fontWeight:'bold', color:theme.palette.primary.dark}}>

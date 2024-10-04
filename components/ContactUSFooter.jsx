@@ -83,7 +83,7 @@ const ContactUSFooter = ({contactPage}) => {
                     }}
                     >
                         
-                {/* <Grid container alignItems="center">
+               <Grid container alignItems="center">
                     <Grid item="true" size={12} sx={{ display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
                         <Typography
                             variant={titleVariant}
@@ -135,11 +135,11 @@ const ContactUSFooter = ({contactPage}) => {
                     </Grid>
                 <Grid item="true" size={12} sx={{ marginBottom: 1, display: 'flex', justifyContent: 'center', textAlign: 'center' }}>       
                     <Typography variant={bodyVariant}>
-                        Mon-Fri: 5:00 PM – 9:00 PM <br/>
-                        Sat-Sun: 9:00 AM – 9:00 PM
+                        Mon-Fri: 5:00 PM – 10:00 PM <br/>
+                        Sat-Sun: 8:00 AM – 10:00 PM
                     </Typography>
                 </Grid>
-                </Grid> */}
+                </Grid>
                 </Box>
                 
             </Box>
@@ -238,12 +238,12 @@ const ContactUSFooter = ({contactPage}) => {
                                         </ListItem>
                                         <ListItem>
                                             <Typography variant={bodyVariant}>
-                                                Mon-Fri: 5:00 PM – 9:00 PM
+                                                Mon-Fri: 5:00 PM – 10:00 PM
                                             </Typography>
                                         </ListItem>
                                         <ListItem>
                                             <Typography variant={bodyVariant}>
-                                                Sat-Sun: 9:00 AM – 9:00 PM
+                                                Sat-Sun: 8:00 AM – 10:00 PM
                                             </Typography>
                                         </ListItem>
                                     </List>
