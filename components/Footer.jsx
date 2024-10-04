@@ -120,7 +120,12 @@ const Footer = () => {
                                 >
                               <PlaceIcon size="small" />
                               </IconButton>
-                              367 Balinroan Crescent, Nepean, ON
+                              <Link
+                                href="https://www.google.com/maps/place/367+Balinroan+Crescent,+Nepean,+ON+K2J+3V1/@45.2682511,-75.7353759,17z/data=!3m1!4b1!4m6!3m5!1s0x4ccdfcd0d8749eeb:0x97225472790c30f2!8m2!3d45.2682511!4d-75.732801!16s%2Fg%2F11c5dx6tmj?entry=ttu&g_ep=EgoyMDI0MDkyMi4wIKXMDSoASAFQAw%3D%3D" 
+                                color="inherit">
+                                367 Balinroan Crescent, Nepean, ON
+                              </Link>
+                              
                             </Typography>
                             <Typography>
                               <IconButton 
@@ -128,7 +133,10 @@ const Footer = () => {
                                 href="mailto:info@sparkeunlimited.ca" 
                                 color="inherit">
                               <AlternateEmailIcon />
-                              </IconButton>info@sparkeunlimited.ca
+                              </IconButton><Link 
+                                href="mailto:info@sparkeunlimited.ca" 
+                                color="inherit">info@sparkeunlimited.ca
+                                </Link>
                             </Typography>
                             <Typography>
                             <IconButton 
@@ -137,21 +145,25 @@ const Footer = () => {
                                 color="inherit">
                               <PhoneIphoneIcon />
                               </IconButton>
-                              (343) 596-6337
+                              <Link 
+                                href="tel::3435966337" 
+                                color="inherit">(343) 596-6337
+                              </Link>  
                             </Typography>
                         </Grid>
-                        <Grid item='true' size={4}>
+                        <Grid item='true' size={3} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <Image
                             src="/assets/img/ECRA-ESA-logo-black.png"
                             alt="ecra_esa_logo"
                             sizes="100vw"
-                            width= {100} 
-                            height= {100}
+                            width= {150} 
+                            height= {150}
+                            
                             />
-                            <Typography>ECRA/ESA#:</Typography>
-                            <Typography>7017645</Typography>
+                            <Typography >ECRA/ESA#:</Typography>
+                            <Typography >7017645</Typography>
                         </Grid>
-                        <Grid item='true' size={2}>
+                        <Grid item='true'sx={{ textAlign: 'center'}} size={3}>
                             <Typography variant="h6">Quick Links</Typography>
                             <Link href="/" color="inherit">Home</Link><br/>
                             <Link href="/services" color="inherit">Services</Link><br />

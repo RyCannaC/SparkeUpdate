@@ -1,10 +1,11 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/aboutus/page": "app/aboutus/page.js",
-  "/contactus/page": "app/contactus/page.js",
   "/calendar/page": "app/calendar/page.js",
+  "/aboutus/page": "app/aboutus/page.js",
   "/api/sendEmail/route": "app/api/sendEmail/route.js",
+  "/contactus/page": "app/contactus/page.js",
   "/page": "app/page.js",
   "/icon.ico/route": "app/icon.ico/route.js",
-  "/services/page": "app/services/page.js"
+  "/services/page": "app/services/page.js",
+  "/faq/page": "app/faq/page.js"
 }

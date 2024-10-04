@@ -17,6 +17,7 @@ import useIsMobile from '@/components/IsMobile';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from "@mui/material/Button";
+import ContactSupportIcon from '@mui/icons-material/ContactSupport';
 
 export default function Nav() {
   const isMobile = useIsMobile();
@@ -98,6 +99,14 @@ export default function Nav() {
                       About Us
                     </Link>
                   </MenuItem>
+                  <MenuItem onClick={toggleMenu}>
+                    <ListItemIcon>
+                      <ContactSupportIcon />
+                    </ListItemIcon>
+                    <Link href="/faq" passHref>
+                      FAQ
+                    </Link>
+                  </MenuItem>
                   <MenuItem sx={{background: 'linear-gradient(to right, #f59e0b, #ea580c, #fbbf24)',}} onClick={toggleMenu}>
                     <ListItemIcon>
                       <AlternateEmailIcon />
@@ -136,6 +145,9 @@ export default function Nav() {
             </Link>
             <Link href="/aboutus" passHref>
               <InfoIcon /> About Us
+            </Link>
+            <Link href="/faq" passHref>
+              <ContactSupportIcon />FAQ
             </Link>
             <Link href="/contactus">
               <Button
