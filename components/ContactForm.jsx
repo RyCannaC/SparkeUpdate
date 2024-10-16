@@ -7,24 +7,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid2";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-
-const theme = createTheme({
-  palette: {
-    primary: {
-        cloudBurst: '#374151',
-        main: '#3f50b5',
-        dark: '#111827',
-        contrastText: '#fff',
-    },
-    secondary: {
-        light: '#ff7961',
-        main: '#f44336',
-        dark: '#ba000d',
-        contrastText: '#000',
-    },
-  },
-});
+import { useState } from 'react';
 
 // Initial form values
 const initValues = { fName: "", lName: "", phone: "", reqEmail: "", subject: "", message: "" };
