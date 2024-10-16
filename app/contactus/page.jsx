@@ -1,10 +1,8 @@
 'use client';
 import ContactUSFooter from '@/components/ContactUSFooter';
+import ContactForm from '@/components/ContactForm';
 import { useState } from 'react';
 import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid2";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import useIsMobile from "@/components/IsMobile";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -117,54 +115,7 @@ const ContactUs = () => {
                 Contact Form:
             </Typography>
         </ThemeProvider>
-        <form onSubmit={onSubmit}>
-            <Grid container spacing={2}>
-                {['fName', 'lName', 'phone', 'reqEmail', 'subject'].map((field, idx) => (
-                    <Grid item='true' size={12} key={idx}>
-                        <TextField
-                            id={field}
-                            name={field}
-                            label={field === 'reqEmail' ? 'Email' : field === 'phone' ? 'Phone Number' : field === 'fName' ? 'First Name' : field === 'lName' ? 'Last Name' : 'Subject'}
-                            type={field === 'phone' ? 'tel' : field === 'reqEmail' ? 'email' : 'text'}
-                            variant="outlined"
-                            fullWidth
-                            required
-                            value={values[field]}
-                            onChange={handleInputChange}
-                        />
-                    </Grid>
-                ))}
-                <Grid item='true' size={12}>
-                    <TextField
-                        id="message"
-                        name="message"
-                        label="Message"
-                        multiline
-                        rows={8}
-                        variant="outlined"
-                        fullWidth
-                        required
-                        value={values.message}
-                        onChange={handleInputChange}
-                    />
-                </Grid>
-                
-                <Grid item='true' size={12}>
-                    <Button
-                    
-                        disabled={!values.fName || !values.lName || !values.phone || !values.reqEmail || !values.subject || !values.message || isLoading}
-                        id="submitButton"
-                        type="submit"
-                        variant="contained"
-                        color="warning"
-                        fullWidth
-                    >
-                        {isLoading ? 'Sending...' : 'Submit'}
-                    </Button>
-                </Grid>
-            </Grid>
-        </form>
-     
+        <ContactForm />
       </Box>
   
     </>

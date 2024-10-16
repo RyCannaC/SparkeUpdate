@@ -7,116 +7,72 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid2";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { useState } from "react";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+        cloudBurst: '#374151',
+        main: '#3f50b5',
+        dark: '#111827',
+        contrastText: '#fff',
+    },
+    secondary: {
+        light: '#ff7961',
+        main: '#f44336',
+        dark: '#ba000d',
+        contrastText: '#000',
+    },
+  },
+});
 
 const ContactForm = () => {
 <Box sx={{ bgcolor:'white', marginBottom: 1, p:4, width:1 }}>
             <form onSubmit={onSubmit}>
                 <Grid container spacing={2}>
-                    <Grid display="flex" justifyContent="center" alignItems="center" size={12}>
-                        <TextField 
-                            id='fName' 
-                            name="fName"
-                            label='First Name' 
-                            variant="outlined" 
-                            fullWidth 
-                            required 
-                            value={values.fName}
-                            onChange={handleInputChange}
-                        />
-                    </Grid>
-                    <Grid display="flex" justifyContent="center" alignItems="center" size={12}>
-                        <TextField 
-                            id='lName' 
-                            name="lName"
-                            label='Last Name' 
-                            variant="outlined" 
-                            fullWidth 
-                            required 
-                            value={values.lName}
-                            onChange={handleInputChange}
-                        />
-                    </Grid>
-                    <Grid display="flex" justifyContent="center" alignItems="center" size={12}>
-                        <TextField 
-                            id='phone' 
-                            name="phone"
-                            label='Phone Number' 
-                            type='tel' 
-                            variant="outlined" 
-                            fullWidth 
-                            required 
-                            value={values.phone}
-                            onChange={handleInputChange}
-                        />
-                    </Grid>
-                    <Grid display="flex" justifyContent="center" alignItems="center" size={12}>
-                        <TextField 
-                            id='reqEmail' 
-                            name="reqEmail"
-                            label='Email' 
-                            type='email' 
-                            variant="outlined" 
-                            fullWidth 
-                            required 
-                            value={values.reqEmail}
-                            onChange={handleInputChange}
-                        />
-                    </Grid>
-                    <Grid display="flex" justifyContent="center" alignItems="center" size={12}>
-                        <TextField 
-                            id='subject' 
-                            name="subject"
-                            label='Subject' 
-                            variant="outlined" 
-                            fullWidth 
-                            required 
-                            value={values.subject}
-                            onChange={handleInputChange}
-                        />
-                    </Grid>
-                    <Grid display="flex" justifyContent="center" alignItems="center" size={12}>
-                        <TextField 
-                            id='message' 
-                            name="message"
-                            label='Message' 
-                            multiline 
-                            rows={8} 
-                            variant="outlined" 
-                            fullWidth 
-                            required 
-                            value={values.message}
-                            onChange={handleInputChange}
-                        />
-                    </Grid>
-                    <Grid display="flex" justifyContent="center" alignItems="center" size={12}>
-                        <FormGroup>
-                            <FormControlLabel 
-                                control={
-                                    <Switch
-                                    id="ccEmail"
-                                        checked={values.checked}
-                                        onChange={handleSwitchChange}
-                                        color='warning'
-                                        inputProps={{ 'aria-label': 'controlled' }}
-                                    />
-                                } 
-                                label="Would you like to be cc'd on this email?" 
-                            />
-                        </FormGroup>
-                    </Grid>
-                    <Grid display="flex" justifyContent="center" alignItems="center" size={12}>
-                        <Button 
-                            disabled={!values.fName || !values.lName || !values.phone || !values.reqEmail || !values.subject || !values.message || isLoading} 
-                            id="submitButton"
-                            type='submit' 
-                            variant='contained' 
-                            color='warning' 
+                    {['fName', 'lName', 'phone', 'reqEmail', 'subject'].map((field, idx) => (
+                    <Grid item='true' size={12} key={idx}>
+                        <TextField
+                            id={field}
+                            name={field}
+                            label={field === 'reqEmail' ? 'Email' : field === 'phone' ? 'Phone Number' : field === 'fName' ? 'First Name' : field === 'lName' ? 'Last Name' : 'Subject'}
+                            type={field === 'phone' ? 'tel' : field === 'reqEmail' ? 'email' : 'text'}
+                            variant="outlined"
                             fullWidth
-                        >
-                            Submit
-                        </Button>
+                            required
+                            value={values[field]}
+                            onChange={handleInputChange}
+                        />
                     </Grid>
+                ))}
+                <Grid item='true' size={12}>
+                    <TextField
+                        id="message"
+                        name="message"
+                        label="Message"
+                        multiline
+                        rows={8}
+                        variant="outlined"
+                        fullWidth
+                        required
+                        value={values.message}
+                        onChange={handleInputChange}
+                    />
+                </Grid>
+                
+                <Grid item='true' size={12}>
+                    <Button
+                    
+                        disabled={!values.fName || !values.lName || !values.phone || !values.reqEmail || !values.subject || !values.message || isLoading}
+                        id="submitButton"
+                        type="submit"
+                        variant="contained"
+                        color="warning"
+                        fullWidth
+                    >
+                        {isLoading ? 'Sending...' : 'Submit'}
+                    </Button>
+                </Grid>
                 </Grid>
             </form>
         </Box>
