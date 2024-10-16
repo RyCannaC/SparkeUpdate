@@ -11,7 +11,7 @@ export const metadata = {
 };
 
 const RootLayout = ({ children }) => (
-  <html lang="en">
+  <html lang="en" suppressHydrationWarning={true}>
     <body>
       
 
