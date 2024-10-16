@@ -1,32 +1,44 @@
-import nodemailer from 'nodemailer';
-import { NextResponse } from 'next/server';
+import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses';
+
+// Set up AWS SES client
+const sesClient = new SESClient({ region: 'us-east-1' }); // replace 'your-region' with the correct AWS region
 
 export async function POST(req, res) {
   try {
-    const { fName, lName, reqEmail, subject, message } = await req.json();
+    // Parse incoming request body
+    const { fName, lName, phone, reqEmail, subject, message } = await req.json();
 
-    const transporter = nodemailer.createTransport({
-      host: "email-smtp.us-east-1.amazonaws.com",
-      port: 587, 
-      secure: false, 
-      auth: {
-       
+    // Compose the email content
+    const emailParams = {
+      Source: 'info@sparkeunlimited.ca', // Your verified SES email
+      Destination: {
+        ToAddresses: ['rmaxwell@sparkeunlimited.ca'], // The recipient's email address
       },
-    });
-
-    const mailOptions = {
-      from: 'info@sparkeunlimited.ca',
-      to: 'rmaxwell@sparkeunlimited.ca',
-      subject: subject,
-      html: `<p>${message}</p><p>From: ${fName} ${lName} (${reqEmail})</p>`,
+      Message: {
+        Subject: {
+          Data: `New Contact Form Submission: ${subject}`,
+        },
+        Body: {
+          Text: {
+            Data: `
+              Name: ${fName} ${lName}
+              Phone: ${phone}
+              Email: ${reqEmail}
+              Message: ${message}
+            `,
+          },
+        },
+      },
     };
 
-    const info = await transporter.sendMail(mailOptions);
-    console.log('Email sent successfully:', info.response, "res answer", res);
+    // Send email
+    const command = new SendEmailCommand(emailParams);
+    await sesClient.send(command);
 
-    return NextResponse.json({ success: true, message: 'Email sent successfully' }, { status: 200 });
+    // Send response back to the client
+    return res.status(200).json({ success: true, message: 'Email sent successfully' });
   } catch (error) {
     console.error('Error sending email:', error);
-    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+    return res.status(500).json({ success: false, error: 'Failed to send email' });
   }
 }

@@ -38,7 +38,7 @@ const ContactUs = () => {
   const { values, isLoading, responseData } = state;
   const isMobile = useIsMobile();
 
- /*  const handleInputChange = (event) => {
+   const handleInputChange = (event) => {
       const { name, value } = event.target;
       setState((prev) => ({
           ...prev,
@@ -73,7 +73,7 @@ const ContactUs = () => {
     console.error("Request failed:", error);
     setState((prev) => ({ ...prev, isLoading: false }));
   } 
-  }; */
+  }; 
 
   return (  
     <>
@@ -112,7 +112,7 @@ const ContactUs = () => {
         
         <ContactUSFooter contactPage={displayButton} />
     
-       {/*  <ThemeProvider theme={theme}>
+        <ThemeProvider theme={theme}>
             <Typography variant={isMobile ? 'h6' : 'h4'} sx={{textAlign: 'center', marginBottom: 2, fontWeight: 'bold', color: theme.palette.primary.dark}}>
                 Contact Form:
             </Typography>
@@ -163,7 +163,7 @@ const ContactUs = () => {
                     </Button>
                 </Grid>
             </Grid>
-        </form> */}
+        </form>
      
       </Box>
   
