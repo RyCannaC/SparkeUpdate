@@ -1,8 +1,5 @@
 'use client';
 import * as React from 'react';
-import Switch from '@mui/material/Switch';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid2";
 import TextField from "@mui/material/TextField";
@@ -55,7 +52,8 @@ const ContactForm = () => {
             values: { ...prev.values, [name]: value },
         }));
     };
-  
+  return (
+
 <Box sx={{ bgcolor:'white', marginBottom: 1, p:4, width:1 }}>
             <form onSubmit={onSubmit}>
                 <Grid container spacing={2}>
@@ -105,6 +103,8 @@ const ContactForm = () => {
                 </Grid>
             </form>
         </Box>
+
+  )
 };
 
 export default ContactForm;
