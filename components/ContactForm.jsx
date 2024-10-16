@@ -26,6 +26,11 @@ const theme = createTheme({
   },
 });
 
+// Initial form values
+const initValues = { fName: "", lName: "", phone: "", reqEmail: "", subject: "", message: "" };
+const initState = { values: initValues, isLoading: false, responseData: "" };
+
+
 const onSubmit = async (event) => {
     event.preventDefault();
     setState((prev) => ({ ...prev, isLoading: true }));
@@ -54,6 +59,21 @@ const onSubmit = async (event) => {
   }; 
 
 const ContactForm = () => {
+
+    const [displayButton, setDisplayButton] = useState(true); // Initialize as boolean
+
+    const [state, setState] = useState(initState);
+    const { values, isLoading, responseData } = state;
+    const isMobile = useIsMobile();
+  
+     const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setState((prev) => ({
+            ...prev,
+            values: { ...prev.values, [name]: value },
+        }));
+    };
+  
 <Box sx={{ bgcolor:'white', marginBottom: 1, p:4, width:1 }}>
             <form onSubmit={onSubmit}>
                 <Grid container spacing={2}>
