@@ -46,32 +46,7 @@ const ContactUs = () => {
 
     
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    setState((prev) => ({ ...prev, isLoading: true }));
-    try {
-      const response = await fetch('/api/sendEmail', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(values),
-      });
   
-    
-    const data = await response.json(); // Extract JSON response
-    setState((prev) => ({ ...prev, isLoading: false, responseData: data }));
-
-    if (data.success) {
-      console.log("Email sent successfully:", data.message);
-    } else {
-      console.error("Error:", data.error);
-    }
-  } catch (error) {
-    console.error("Request failed:", error);
-    setState((prev) => ({ ...prev, isLoading: false }));
-  } 
-  }; 
 
   return (  
     <>
