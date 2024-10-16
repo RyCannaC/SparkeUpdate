@@ -28,7 +28,8 @@ const theme = createTheme({
 const ContactUs = () => {
   
   const isMobile = useIsMobile();
-    
+  const [displayButton, setDisplayButton] = useState(true); // Initialize as boolean
+
 
   
 

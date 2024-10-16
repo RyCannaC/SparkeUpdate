@@ -60,7 +60,6 @@ const onSubmit = async (event) => {
 
 const ContactForm = () => {
 
-    const [displayButton, setDisplayButton] = useState(true); // Initialize as boolean
 
     const [state, setState] = useState(initState);
     const { values, isLoading, responseData } = state;
