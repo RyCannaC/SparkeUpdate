@@ -27,7 +27,7 @@ const theme = createTheme({
 
 const ContactUs = () => {
   
- 
+  const isMobile = useIsMobile();
     
 
   

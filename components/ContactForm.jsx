@@ -64,7 +64,7 @@ const ContactForm = () => {
 
     const [state, setState] = useState(initState);
     const { values, isLoading, responseData } = state;
-    const isMobile = useIsMobile();
+   
   
      const handleInputChange = (event) => {
         const { name, value } = event.target;
