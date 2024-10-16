@@ -21,7 +21,6 @@ const RootLayout = ({ children }) => (
           backgroundColor: 'black',
           background: 'radial-gradient(circle, rgba(2, 0, 10, 0.8) 0%, black 100%)',
           position: 'absolute',
-          content: '""',
           zIndex: 2, // Ensures it layers above the radial gradient
           width: '100%',
           height: '100%',
